@@ -19,17 +19,17 @@ export default function FooterItems(
         <>
           {/* Desktop view */}
           <ul
-            class={`hidden md:flex flex-row gap-10 ${
+            class={`hidden md:flex flex-row gap-10 max-w-3xl ml-20 ${
               justify && "justify-between"
             }`}
           >
             {sections.map((section) => (
-              <li>
-                <div class="flex flex-col gap-2">
+              <li class="break-all flex-1">
+                <div class="flex flex-col gap-1">
                   <span class="font-medium text-lg">
                     {section.label}
                   </span>
-                  <ul class={`flex flex-col gap-2 flex-wrap text-sm`}>
+                  <ul class={`flex flex-col gap-0.5 flex-wrap text-sm `}>
                     {section.items?.map((item) => (
                       <li>
                         <a href={item.href} class="block py-1 link link-hover">

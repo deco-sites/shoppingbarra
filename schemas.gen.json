@@ -7944,6 +7944,11 @@
                     "type": "string",
                     "const": "Zoom",
                     "default": "Zoom"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Youtube",
+                    "default": "Youtube"
                   }
                 ],
                 "type": "string",
@@ -9171,6 +9176,13 @@
         "layout": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Layout",
           "title": "Layout"
+        },
+        "isHomePage": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Is Home Page"
         }
       },
       "required": [],
@@ -10297,6 +10309,11 @@
               "type": "string",
               "const": "Zoom",
               "default": "Zoom"
+            },
+            {
+              "type": "string",
+              "const": "Youtube",
+              "default": "Youtube"
             }
           ],
           "type": "string",

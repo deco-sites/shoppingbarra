@@ -10,7 +10,9 @@ import RegionSelector from "$store/components/footer/RegionSelector.tsx";
 import ColorClasses from "$store/components/footer/ColorClasses.tsx";
 import Divider from "$store/components/footer/Divider.tsx";
 import BackToTop from "$store/components/footer/BackToTop.tsx";
+import SecondaryFooter from "$store/components/footer/SecondaryFooter.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import { useEffect, useState } from "preact/hooks";
 
 export type Item = {
   label: string;
@@ -109,6 +111,7 @@ export interface Props {
     text?: string;
   };
   layout?: Layout;
+  isHomePage?: boolean;
 }
 
 function Footer({
@@ -140,6 +143,7 @@ function Footer({
       backToTheTop: false,
     },
   },
+  isHomePage = true,
 }: Props) {
   const _logo = layout?.hide?.logo ? <></> : <Logo logo={logo} />;
   const _newsletter = layout?.hide?.newsletter ? <></> : (
@@ -173,133 +177,36 @@ function Footer({
     : <ExtraLinks content={extraLinks} />;
 
   return (
-    <footer
-      class={`w-full flex flex-col pt-10 pb-2 lg:pb-10 gap-10 ${
-        ColorClasses(layout)
-      }`}
-    >
-      <div class="lg:container mx-6 lg:mx-auto">
-        {(!layout?.variation || layout?.variation == "Variation 1") && (
-          <div class="flex flex-col gap-10">
-            <div class="flex flex-col lg:flex-row lg:justify-between gap-8 lg:gap-12">
-              {_logo}
-              {_sectionLinks}
-              {_newsletter}
-            </div>
-            <Divider />
-            <div class="flex flex-col md:flex-row gap-10 md:gap-14 md:items-end">
-              {_payments}
-              {_social}
-              {_apps}
-              {_region}
-            </div>
-            <Divider />
-            <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10">
-              <PoweredBy />
-              {_links}
-            </div>
-          </div>
-        )}
-        {layout?.variation == "Variation 2" && (
-          <div class="flex flex-col gap-10">
-            <div class="flex flex-col md:flex-row gap-10">
-              <div class="flex flex-col gap-10 lg:w-1/2">
-                {_logo}
-                {_social}
-                {_payments}
-                {_apps}
-                {_region}
-              </div>
-              <div class="flex flex-col gap-10 lg:gap-20 lg:w-1/2 lg:pr-10">
-                {_newsletter}
-                {_sectionLinks}
-              </div>
-            </div>
-            <Divider />
-            <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10">
-              <PoweredBy />
-              {_links}
-            </div>
-          </div>
-        )}
-        {layout?.variation == "Variation 3" && (
-          <div class="flex flex-col gap-10">
-            {_logo}
-            <div class="flex flex-col lg:flex-row gap-14">
-              <div class="flex flex-col gap-10 lg:w-2/5">
-                {_newsletter}
-                {_payments}
-                {_apps}
-              </div>
-              <div class="flex flex-col gap-10 lg:gap-20 lg:w-3/5 lg:items-end">
-                <div class="flex flex-col lg:flex-row gap-10">
+    <>
+      {isHomePage
+        ? (
+          <footer
+            class={`w-full flex flex-col pt-10 pb-2 lg:pb-10 gap-10 bg-[#000000] ${
+              ColorClasses(layout)
+            }`}
+          >
+            <div class="lg:container mx-6 lg:mx-auto">
+              <div class="flex flex-col">
+                <div class="flex flex-col lg:flex-row lg:justify-center max-w-full">
+                  {_logo}
                   {_sectionLinks}
                   {_social}
                 </div>
-                {_region}
               </div>
             </div>
-            <Divider />
-            <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10">
-              <PoweredBy />
-              {_links}
-            </div>
-          </div>
+            {layout?.hide?.backToTheTop
+              ? <></>
+              : <BackToTop content={backToTheTop?.text} />}
+          </footer>
+        )
+        : (
+          <footer
+            class={`w-full flex flex-col pt-5 lg:pb-5 bg-[#ff6c14] text-white text-sm`}
+          >
+            <SecondaryFooter />
+          </footer>
         )}
-        {layout?.variation == "Variation 4" && (
-          <div class="flex flex-col gap-10">
-            {_newsletter}
-            {layout?.hide?.newsletter ? <></> : <Divider />}
-            <div class="flex flex-col lg:flex-row gap-10 lg:gap-20 lg:justify-between">
-              {_sectionLinks}
-              <div class="flex flex-col gap-10 lg:gap-10 lg:w-2/5 lg:pl-10">
-                <div class="flex flex-col md:flex-row gap-10 lg:gap-20">
-                  <div class="flex-auto">
-                    {_payments}
-                  </div>
-                  <div class="flex-auto">
-                    {_social}
-                  </div>
-                </div>
-                {_region}
-                {_apps}
-              </div>
-            </div>
-            <Divider />
-            <div class="flex flex-col md:flex-row md:justify-between gap-10 md:items-center">
-              {_logo}
-              <PoweredBy />
-            </div>
-          </div>
-        )}
-        {layout?.variation == "Variation 5" && (
-          <div class="flex flex-col gap-10">
-            {_newsletter}
-            {layout?.hide?.newsletter ? <></> : <Divider />}
-            {_logo}
-            <div class="flex flex-col lg:flex-row gap-10 lg:gap-20 lg:justify-between">
-              {_sectionLinks}
-              <div class="flex flex-col gap-10 lg:w-2/5 lg:pl-10">
-                {_payments}
-                {_social}
-                {_apps}
-              </div>
-            </div>
-            <Divider />
-            <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10 md:items-center">
-              <PoweredBy />
-              <div class="flex flex-col md:flex-row gap-10 md:items-center">
-                {_links}
-                {_region}
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-      {layout?.hide?.backToTheTop
-        ? <></>
-        : <BackToTop content={backToTheTop?.text} />}
-    </footer>
+    </>
   );
 }
 

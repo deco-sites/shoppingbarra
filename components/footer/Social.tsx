@@ -7,7 +7,8 @@ export interface SocialItem {
     | "Instagram"
     | "Linkedin"
     | "Tiktok"
-    | "Twitter";
+    | "Twitter"
+    | "Youtube";
   link: string;
 }
 
