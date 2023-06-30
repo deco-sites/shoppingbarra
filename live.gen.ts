@@ -2,7 +2,6 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
-import config from "./deno.json" assert { type: "json" };
 import { DecoManifest } from "$live/types.ts";
 import * as $$$$0 from "./routes/styles.css.ts";
 import * as $$$$1 from "./routes/_app.tsx";
@@ -80,6 +79,7 @@ import * as i2$$$$$$$$7 from "$live/matchers/MatchSite.ts";
 import * as i2$$$$$$$$8 from "$live/matchers/MatchUserAgent.ts";
 import * as i2$$$$$$$$$0 from "$live/flags/audience.ts";
 import * as i2$$$$$$$$$1 from "$live/flags/everyone.ts";
+import * as i1$$$$$$2 from "$live/flags/flag.ts";
 import * as i2$$$$$0 from "$live/actions/workflows/cancel.ts";
 import * as i2$$$$$1 from "$live/actions/workflows/run.ts";
 import * as i2$$$$$2 from "$live/actions/workflows/signal.ts";
@@ -279,6 +279,7 @@ const manifest = {
   "flags": {
     "$live/flags/audience.ts": i2$$$$$$$$$0,
     "$live/flags/everyone.ts": i2$$$$$$$$$1,
+    "$live/flags/flag.ts": i1$$$$$$2,
   },
   "actions": {
     "$live/actions/workflows/cancel.ts": i2$$$$$0,
@@ -338,7 +339,6 @@ const manifest = {
     "deco-sites/std/accounts/vtex.ts": i2$$3,
     "deco-sites/std/accounts/yourViews.ts": i2$$4,
   },
-  "config": config,
   "baseUrl": import.meta.url,
 };
 
