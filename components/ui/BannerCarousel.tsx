@@ -5,6 +5,7 @@ import SliderJS from "$store/islands/SliderJS.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import { useId } from "preact/hooks";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import { headerHeight } from "$store/components/header/constants.ts";
 
 /**
  * @titleBy alt
@@ -53,7 +54,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
     <a
       href={action?.href ?? "#"}
       aria-label={action?.label}
-      class="relative h-[600px] overflow-y-hidden w-full"
+      class="relative h-auto overflow-y-hidden w-full"
     >
       <Picture preload={lcp}>
         <Source
@@ -77,17 +78,6 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
           alt={alt}
         />
       </Picture>
-      {action && (
-        <div class="absolute top-0 bottom-0 m-auto left-0 right-0 sm:right-auto sm:left-[12%] max-h-min max-w-[235px] flex flex-col gap-4 p-4 rounded glass">
-          <span class="text-6xl font-medium text-base-100">
-            {action.title}
-          </span>
-          <span class="font-medium text-xl text-base-100">
-            {action.subTitle}
-          </span>
-          <Button class="glass">{action.label}</Button>
-        </div>
-      )}
     </a>
   );
 }
@@ -153,25 +143,36 @@ function Buttons() {
 
 function BannerCarousel({ images, preload, interval }: Props) {
   const id = useId();
+  const qtdImages = Number(images?.length);
 
   return (
-    <div
-      id={id}
-      class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px]"
-    >
-      <Slider class="carousel carousel-center w-full col-span-full row-span-full scrollbar-none gap-6">
-        {images?.map((image, index) => (
-          <Slider.Item index={index} class="carousel-item w-full">
-            <BannerItem image={image} lcp={index === 0 && preload} />
-          </Slider.Item>
-        ))}
-      </Slider>
-
-      <Buttons />
-
-      <Dots images={images} interval={interval} />
-
-      <SliderJS rootId={id} interval={interval && interval * 1e3} infinite />
+    <div class="flex justify-center">
+      <div
+        id={id}
+        class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px] 
+      max-h-[39rem] max-w-[90rem]"
+        style={`height: calc(100vh - ${headerHeight})`}
+      >
+        <Slider class="carousel carousel-center w-full col-span-full row-span-full scrollbar-none gap-6">
+          {images?.map((image, index) => (
+            <Slider.Item index={index} class="carousel-item w-full">
+              <BannerItem image={image} lcp={index === 0 && preload} />
+            </Slider.Item>
+          ))}
+        </Slider>
+        {qtdImages > 1 &&
+          (
+            <>
+              <Buttons />
+              <Dots images={images} interval={interval} />
+              <SliderJS
+                rootId={id}
+                interval={interval && interval * 1e3}
+                infinite
+              />
+            </>
+          )}
+      </div>
     </div>
   );
 }
