@@ -31,14 +31,14 @@ function FiquePorDentro(props: Props) {
   } = props;
 
   return (
-    <div class="container py-8 flex flex-col gap-8 lg:gap-10 text-base-content max-w-[1226.47px] items-center">
+    <div class="container py-8 flex flex-col gap-8 lg:gap-10 text-base-content max-w-[1226.47px]">
       <Header
         title={header.title}
         description=""
         alignment="center"
       />
       {/* Main image */}
-      <div class="flex flex-col mx-5 md:flex-row mt-2 md:gap-8 md:mx-40">
+      <div class="flex flex-col mx-5 md:flex-row mt-2 md:gap-8 2xl:mx-40">
         {list?.map((content, index) => (
           index == 0 && (
             <a
@@ -46,7 +46,7 @@ function FiquePorDentro(props: Props) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${content.label} Logo`}
-              class="flex gap-2 items-center"
+              class="flex gap-2"
             >
               <div class="max-w-[702px]">
                 <PictureObject content={content} index={index} />
@@ -63,7 +63,7 @@ function FiquePorDentro(props: Props) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${content.label} Logo`}
-                class="flex gap-2 items-center"
+                class="flex gap-2"
               >
                 <div class="max-w-[702px] md:max-w-[360px] w-full">
                   <PictureObject content={content} index={index} />

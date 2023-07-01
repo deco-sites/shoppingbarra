@@ -26,7 +26,7 @@ export default function PictureObject({ content }: Props) {
       </Picture>
 
       <div class="inline">
-        <div class="float-left mt-2 mb-5 text-l text-xs md:text-base">
+        <div class="float-left mt-2 mb-5 text-l text-xs lg:text-base">
           {content.label}
         </div>
         <div class="float-right mt-2 mb-5">
