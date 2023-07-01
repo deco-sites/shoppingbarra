@@ -90,6 +90,7 @@
               "deco-sites/shoppingbarra/sections/Content/Faq.tsx",
               "deco-sites/shoppingbarra/sections/Content/Logos.tsx",
               "deco-sites/shoppingbarra/sections/Content/Testimonials.tsx",
+              "deco-sites/shoppingbarra/sections/Content/VisitOurStores.tsx",
               "deco-sites/shoppingbarra/sections/DesignSystem/DesignSystem.tsx",
               "deco-sites/shoppingbarra/sections/Footer/Footer.tsx",
               "deco-sites/shoppingbarra/sections/Footer/SecondaryFooter.tsx",
@@ -7513,14 +7514,6 @@
           "description": "text to be rendered on top of the image",
           "title": "Title"
         },
-        "subtitle": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "text to be rendered on top of the image",
-          "title": "Subtitle"
-        },
         "image": {
           "type": "object",
           "properties": {
@@ -8362,6 +8355,34 @@
       },
       "required": [],
       "title": "deco-sites/shoppingbarra/sections/Content/Testimonials.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvVmlzaXRPdXJTdG9yZXMudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "href": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Href"
+        },
+        "buttonLabel": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Button Label"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/shoppingbarra/sections/Content/VisitOurStores.tsx@Props"
     },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Colors": {
       "type": "object",
@@ -13872,6 +13893,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvVmlzaXRPdXJTdG9yZXMudHN4": {
+      "title": "deco-sites/shoppingbarra/sections/Content/VisitOurStores.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvVmlzaXRPdXJTdG9yZXMudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/shoppingbarra/sections/Content/VisitOurStores.tsx"
+          ],
+          "default": "deco-sites/shoppingbarra/sections/Content/VisitOurStores.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4": {
       "title": "deco-sites/shoppingbarra/sections/DesignSystem/DesignSystem.tsx",
       "type": "object",
@@ -15466,6 +15508,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvVGVzdGltb25pYWxzLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvVmlzaXRPdXJTdG9yZXMudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4"
