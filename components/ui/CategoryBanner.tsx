@@ -10,7 +10,6 @@ export interface Banner {
   matcher: string;
   /** @default primary */
   background: "primary" | "base-100" | "base-200";
-  title?: string
   image: {
     src: LiveImage;
     /** @description image alt text */

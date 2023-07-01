@@ -7831,13 +7831,6 @@
           "default": "primary",
           "title": "Background"
         },
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
         "image": {
           "type": "object",
           "properties": {
