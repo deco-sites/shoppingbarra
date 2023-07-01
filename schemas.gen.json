@@ -8809,6 +8809,11 @@
               "type": "string",
               "const": "Twitter",
               "default": "Twitter"
+            },
+            {
+              "type": "string",
+              "const": "Youtube",
+              "default": "Youtube"
             }
           ],
           "type": "string",
