@@ -1,7 +1,6 @@
-import Image from "deco-sites/std/components/Image.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Header from "$store/components/ui/SectionHeader.tsx";
-import FiquePorDentroGallery from "$store/components/ui/FiquePorDentroGallery.tsx";
+import PictureObject from "$store/components/ui/PictureObject.tsx";
 
 export interface Content {
   label: string;
@@ -32,16 +31,47 @@ function FiquePorDentro(props: Props) {
   } = props;
 
   return (
-    <div class="container py-8 flex flex-col gap-8 lg:gap-10 text-base-content  lg:py-10">
+    <div class="container py-8 flex flex-col gap-8 lg:gap-10 text-base-content max-w-[1226.47px] items-center">
       <Header
         title={header.title}
         description=""
         alignment="center"
       />
-      <div class="bg-black grid grid-cols-5 grid-rows-4 gap-4">
+      {/* Main image */}
+      <div class="flex flex-col mx-5 md:flex-row mt-2 md:gap-8 md:mx-40">
         {list?.map((content, index) => (
-          <FiquePorDentroGallery content={content} index={index} />
+          index == 0 && (
+            <a
+              href={content.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${content.label} Logo`}
+              class="flex gap-2 items-center"
+            >
+              <div class="max-w-[702px]">
+                <PictureObject content={content} index={index} />
+              </div>
+            </a>
+          )
         ))}
+        {/* Secondary images */}
+        <div class="flex-col">
+          {list?.map((content, index) => (
+            index > 0 && (
+              <a
+                href={content.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${content.label} Logo`}
+                class="flex gap-2 items-center"
+              >
+                <div class="max-w-[702px] md:max-w-[360px] w-full">
+                  <PictureObject content={content} index={index} />
+                </div>
+              </a>
+            )
+          ))}
+        </div>
       </div>
     </div>
   );
