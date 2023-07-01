@@ -93,6 +93,7 @@
               "deco-sites/shoppingbarra/sections/DesignSystem/DesignSystem.tsx",
               "deco-sites/shoppingbarra/sections/Footer/Footer.tsx",
               "deco-sites/shoppingbarra/sections/Header/Header.tsx",
+              "deco-sites/shoppingbarra/sections/Home/FiquePorDentro.tsx",
               "deco-sites/shoppingbarra/sections/Images/BannerGrid.tsx",
               "deco-sites/shoppingbarra/sections/Images/Carousel.tsx",
               "deco-sites/shoppingbarra/sections/Images/ImageGallery.tsx",
@@ -7944,6 +7945,11 @@
                     "type": "string",
                     "const": "Zoom",
                     "default": "Zoom"
+                  },
+                  {
+                    "type": "string",
+                    "const": "OrangeChevronRight",
+                    "default": "OrangeChevronRight"
                   }
                 ],
                 "type": "string",
@@ -9336,6 +9342,61 @@
       ],
       "title": "deco-sites/shoppingbarra/components/header/Header.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hvbWUvRmlxdWVQb3JEZW50cm8udHN4@Content": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        },
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Image"
+        }
+      },
+      "required": [
+        "label",
+        "href",
+        "image"
+      ],
+      "title": "Content"
+    },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hvbWUvRmlxdWVQb3JEZW50cm8udHN4@Content[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hvbWUvRmlxdWVQb3JEZW50cm8udHN4@Content"
+      },
+      "title": "Content[]"
+    },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hvbWUvRmlxdWVQb3JEZW50cm8udHN4@Props": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Title"
+            }
+          },
+          "required": [],
+          "title": "Header"
+        },
+        "list": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hvbWUvRmlxdWVQb3JEZW50cm8udHN4@Content[]",
+          "title": "List"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/shoppingbarra/sections/Home/FiquePorDentro.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Banner": {
       "type": "object",
       "properties": {
@@ -10297,6 +10358,11 @@
               "type": "string",
               "const": "Zoom",
               "default": "Zoom"
+            },
+            {
+              "type": "string",
+              "const": "OrangeChevronRight",
+              "default": "OrangeChevronRight"
             }
           ],
           "type": "string",
@@ -13919,6 +13985,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hvbWUvRmlxdWVQb3JEZW50cm8udHN4": {
+      "title": "deco-sites/shoppingbarra/sections/Home/FiquePorDentro.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hvbWUvRmlxdWVQb3JEZW50cm8udHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/shoppingbarra/sections/Home/FiquePorDentro.tsx"
+          ],
+          "default": "deco-sites/shoppingbarra/sections/Home/FiquePorDentro.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9CYW5uZXJHcmlkLnRzeA==": {
       "title": "deco-sites/shoppingbarra/sections/Images/BannerGrid.tsx",
       "type": "object",
@@ -15443,6 +15530,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hlYWRlci9IZWFkZXIudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hvbWUvRmlxdWVQb3JEZW50cm8udHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9CYW5uZXJHcmlkLnRzeA=="
