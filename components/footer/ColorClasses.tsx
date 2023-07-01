@@ -35,7 +35,7 @@ export default function colorClasses(layout: Layout) {
     case "Base 100":
       return "bg-base-100 text-base-content";
     case "Base 100 inverted":
-      return "bg-base-content text-base-100";
+      return "text-base-100";
     default:
       return "bg-primary text-primary-content";
   }
