@@ -7944,6 +7944,11 @@
                     "type": "string",
                     "const": "Zoom",
                     "default": "Zoom"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Timer",
+                    "default": "Timer"
                   }
                 ],
                 "type": "string",
@@ -10157,6 +10162,11 @@
               "type": "string",
               "const": "Zoom",
               "default": "Zoom"
+            },
+            {
+              "type": "string",
+              "const": "Timer",
+              "default": "Timer"
             }
           ],
           "type": "string",
