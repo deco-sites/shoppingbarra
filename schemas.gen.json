@@ -7809,42 +7809,57 @@
           "description": "RegExp to enable this banner on the current URL. Use /feminino/* to display this banner on feminino category",
           "title": "Matcher"
         },
+        "background": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "primary",
+              "default": "primary"
+            },
+            {
+              "type": "string",
+              "const": "base-100",
+              "default": "base-100"
+            },
+            {
+              "type": "string",
+              "const": "base-200",
+              "default": "base-200"
+            }
+          ],
+          "type": "string",
+          "default": "primary",
+          "title": "Background"
+        },
         "title": {
           "type": [
             "string",
             "null"
           ],
-          "description": "text to be rendered on top of the image",
           "title": "Title"
         },
         "image": {
           "type": "object",
           "properties": {
-            "desktop": {
+            "src": {
               "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-              "title": "Desktop"
-            },
-            "mobile": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-              "title": "Mobile"
+              "title": "Src"
             },
             "alt": {
-              "type": [
-                "string",
-                "null"
-              ],
+              "type": "string",
               "title": "Alt"
             }
           },
           "required": [
-            "desktop",
-            "mobile"
+            "src",
+            "alt"
           ],
           "title": "Image"
         }
       },
       "required": [
         "matcher",
+        "background",
         "image"
       ],
       "title": "Banner",
