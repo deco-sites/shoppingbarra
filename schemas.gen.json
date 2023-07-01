@@ -92,6 +92,7 @@
               "deco-sites/shoppingbarra/sections/Content/Testimonials.tsx",
               "deco-sites/shoppingbarra/sections/DesignSystem/DesignSystem.tsx",
               "deco-sites/shoppingbarra/sections/Footer/Footer.tsx",
+              "deco-sites/shoppingbarra/sections/Footer/SecondaryFooter.tsx",
               "deco-sites/shoppingbarra/sections/Header/Header.tsx",
               "deco-sites/shoppingbarra/sections/Images/BannerGrid.tsx",
               "deco-sites/shoppingbarra/sections/Images/Carousel.tsx",
@@ -9176,13 +9177,6 @@
         "layout": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Layout",
           "title": "Layout"
-        },
-        "isHomePage": {
-          "type": [
-            "boolean",
-            "null"
-          ],
-          "title": "Is Home Page"
         }
       },
       "required": [],
@@ -13915,6 +13909,22 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0Zvb3Rlci9TZWNvbmRhcnlGb290ZXIudHN4": {
+      "title": "deco-sites/shoppingbarra/sections/Footer/SecondaryFooter.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/shoppingbarra/sections/Footer/SecondaryFooter.tsx"
+          ],
+          "default": "deco-sites/shoppingbarra/sections/Footer/SecondaryFooter.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hlYWRlci9IZWFkZXIudHN4": {
       "title": "deco-sites/shoppingbarra/sections/Header/Header.tsx",
       "type": "object",
@@ -15457,6 +15467,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0Zvb3Rlci9Gb290ZXIudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0Zvb3Rlci9TZWNvbmRhcnlGb290ZXIudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hlYWRlci9IZWFkZXIudHN4"

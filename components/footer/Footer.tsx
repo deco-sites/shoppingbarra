@@ -10,9 +10,7 @@ import RegionSelector from "$store/components/footer/RegionSelector.tsx";
 import ColorClasses from "$store/components/footer/ColorClasses.tsx";
 import Divider from "$store/components/footer/Divider.tsx";
 import BackToTop from "$store/components/footer/BackToTop.tsx";
-import SecondaryFooter from "$store/components/footer/SecondaryFooter.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-import { useEffect, useState } from "preact/hooks";
 
 export type Item = {
   label: string;
@@ -111,7 +109,6 @@ export interface Props {
     text?: string;
   };
   layout?: Layout;
-  isHomePage?: boolean;
 }
 
 function Footer({
@@ -143,7 +140,6 @@ function Footer({
       backToTheTop: false,
     },
   },
-  isHomePage = true,
 }: Props) {
   const _logo = layout?.hide?.logo ? <></> : <Logo logo={logo} />;
   const _newsletter = layout?.hide?.newsletter ? <></> : (
@@ -178,34 +174,24 @@ function Footer({
 
   return (
     <>
-      {isHomePage
-        ? (
-          <footer
-            class={`w-full flex flex-col pt-10 pb-2 lg:pb-10 gap-10 bg-[#000000] ${
-              ColorClasses(layout)
-            }`}
-          >
-            <div class="lg:container mx-6 lg:mx-auto">
-              <div class="flex flex-col">
-                <div class="flex flex-col lg:flex-row lg:justify-center max-w-full">
-                  {_logo}
-                  {_sectionLinks}
-                  {_social}
-                </div>
-              </div>
+      <footer
+        class={`w-full flex flex-col pt-10 pb-2 lg:pb-10 gap-10 bg-[#000000] ${
+          ColorClasses(layout)
+        }`}
+      >
+        <div class="lg:container mx-6 lg:mx-auto">
+          <div class="flex flex-col">
+            <div class="flex flex-col lg:flex-row lg:justify-center max-w-full">
+              {_logo}
+              {_sectionLinks}
+              {_social}
             </div>
-            {layout?.hide?.backToTheTop
-              ? <></>
-              : <BackToTop content={backToTheTop?.text} />}
-          </footer>
-        )
-        : (
-          <footer
-            class={`w-full flex flex-col pt-5 lg:pb-5 bg-[#ff6c14] text-white text-sm`}
-          >
-            <SecondaryFooter />
-          </footer>
-        )}
+          </div>
+        </div>
+        {layout?.hide?.backToTheTop
+          ? <></>
+          : <BackToTop content={backToTheTop?.text} />}
+      </footer>
     </>
   );
 }

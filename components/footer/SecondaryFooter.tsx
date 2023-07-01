@@ -6,9 +6,13 @@ const getYear = () => {
 function SecondaryFooter() {
   const year = getYear();
   return (
-    <div class="flex flex-col lg:flex-row lg:justify-center max-w-full text-center">
-      Copyright © {year}. Todos os direitos reservados.
-    </div>
+    <footer
+      class={`w-full flex flex-col pt-5 lg:pb-5 bg-[#ff6c14] text-white text-sm`}
+    >
+      <div class="flex flex-col lg:flex-row lg:justify-center max-w-full text-center">
+        Copyright © {year}. Todos os direitos reservados.
+      </div>
+    </footer>
   );
 }
 
