@@ -28,10 +28,8 @@ export interface SocialItem {
 }
 
 export interface Layout {
-  backgroundColor?:
-    | "Primary"
-  variation?:
-    | "Variation 1"
+  backgroundColor?: "Primary";
+  variation?: "Variation 1";
   hide?: {
     logo?: boolean;
     newsletter?: boolean;
