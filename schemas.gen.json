@@ -96,6 +96,7 @@
               "deco-sites/shoppingbarra/sections/Content/Benefits.tsx",
               "deco-sites/shoppingbarra/sections/Content/Faq.tsx",
               "deco-sites/shoppingbarra/sections/Content/Logos.tsx",
+              "deco-sites/shoppingbarra/sections/Content/StoreDirectionIframe.tsx",
               "deco-sites/shoppingbarra/sections/Content/Testimonials.tsx",
               "deco-sites/shoppingbarra/sections/Content/VisitOurStores.tsx",
               "deco-sites/shoppingbarra/sections/DesignSystem/DesignSystem.tsx",
@@ -8587,6 +8588,31 @@
       "required": [],
       "title": "deco-sites/shoppingbarra/sections/Content/Logos.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvU3RvcmVEaXJlY3Rpb25JZnJhbWUudHN4@iframeProps": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "string",
+          "title": "Source"
+        },
+        "heigth": {
+          "type": "string",
+          "title": "Heigth"
+        },
+        "width": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Width"
+        }
+      },
+      "required": [
+        "source",
+        "heigth"
+      ],
+      "title": "deco-sites/shoppingbarra/sections/Content/StoreDirectionIframe.tsx@iframeProps"
+    },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvVGVzdGltb25pYWxzLnRzeA==@Testimonial": {
       "type": "object",
       "properties": {
@@ -14139,6 +14165,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvU3RvcmVEaXJlY3Rpb25JZnJhbWUudHN4": {
+      "title": "deco-sites/shoppingbarra/sections/Content/StoreDirectionIframe.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvU3RvcmVEaXJlY3Rpb25JZnJhbWUudHN4@iframeProps"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/shoppingbarra/sections/Content/StoreDirectionIframe.tsx"
+          ],
+          "default": "deco-sites/shoppingbarra/sections/Content/StoreDirectionIframe.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvVGVzdGltb25pYWxzLnRzeA==": {
       "title": "deco-sites/shoppingbarra/sections/Content/Testimonials.tsx",
       "type": "object",
@@ -15861,6 +15908,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvTG9nb3MudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvU3RvcmVEaXJlY3Rpb25JZnJhbWUudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvVGVzdGltb25pYWxzLnRzeA=="
