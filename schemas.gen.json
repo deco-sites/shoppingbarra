@@ -65,6 +65,7 @@
               "./islands/HeaderModals.tsx",
               "./islands/HeaderSearchbar.tsx",
               "./islands/Newsletter.tsx",
+              "./islands/OperationTime.tsx",
               "./islands/OutOfStock.tsx",
               "./islands/ProductImageZoom.tsx",
               "./islands/SearchControls.tsx",
@@ -7084,6 +7085,48 @@
       "required": [],
       "title": "Props"
     },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL09wZXJhdGlvblRpbWUudHN4@OperationTimeProps": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "weekDescription": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Week Description"
+        },
+        "weekendDescription": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Weekend Description"
+        }
+      },
+      "required": [],
+      "title": "OperationTimeProps"
+    },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL09wZXJhdGlvblRpbWUudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "operationDescriptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL09wZXJhdGlvblRpbWUudHN4@OperationTimeProps"
+          },
+          "title": "Operation Descriptions"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/shoppingbarra/components/header/OperationTime.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@SKU": {
       "type": "object",
       "properties": {
@@ -9192,9 +9235,20 @@
       "required": [],
       "title": "deco-sites/shoppingbarra/components/footer/Footer.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL09wZXJhdGlvblRpbWUudHN4@OperationTimeProps[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL09wZXJhdGlvblRpbWUudHN4@OperationTimeProps"
+      },
+      "title": "OperationTimeProps[]"
+    },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@Props": {
       "type": "object",
       "properties": {
+        "descriptions": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL09wZXJhdGlvblRpbWUudHN4@OperationTimeProps[]",
+          "title": "Descriptions"
+        },
         "logo": {
           "type": "object",
           "properties": {
@@ -13243,6 +13297,27 @@
         }
       }
     },
+    "Li9pc2xhbmRzL09wZXJhdGlvblRpbWUudHN4": {
+      "title": "./islands/OperationTime.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL09wZXJhdGlvblRpbWUudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/OperationTime.tsx"
+          ],
+          "default": "./islands/OperationTime.tsx"
+        }
+      }
+    },
     "Li9pc2xhbmRzL091dE9mU3RvY2sudHN4": {
       "title": "./islands/OutOfStock.tsx",
       "type": "object",
@@ -15237,6 +15312,9 @@
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL05ld3NsZXR0ZXIudHN4"
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL09wZXJhdGlvblRpbWUudHN4"
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL091dE9mU3RvY2sudHN4"

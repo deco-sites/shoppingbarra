@@ -81,14 +81,14 @@ const Modal = ({
         class={`w-full h-full flex bg-transparent ${sectionStyles[mode]}`}
       >
         <div
-          class={`bg-base-100 flex flex-col max-h-full ${
+          class={`bg-base-100 flex flex-col max-h-full rounded ${
             containerStyles[mode]
           }`}
         >
-          <header class="flex px-4 py-6 justify-between items-center border-b border-base-200">
+          <header class="flex px-4 py-6 justify-between items-center border-base-200">
             <div class="flex gap-5 items-center">
               <h1>
-                <span class="font-medium text-2xl">{title}</span>
+                <span class="text-lg">{title}</span>
               </h1>
             </div>
             <Button class="btn btn-ghost" onClick={onClose}>

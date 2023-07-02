@@ -385,5 +385,8 @@
 		</g>
 	</symbol>
 
-
+	<symbol id="Timer" xmlns="http://www.w3.org/2000/svg" fill="none">
+		<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M8 14.5a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"></path>
+		<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M8 5v3.5h3.5"></path>
+	</symbol>
 </svg>
