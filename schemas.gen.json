@@ -70,6 +70,7 @@
               "./islands/HeaderModals.tsx",
               "./islands/HeaderSearchbar.tsx",
               "./islands/Newsletter.tsx",
+              "./islands/OperationTime.tsx",
               "./islands/OutOfStock.tsx",
               "./islands/ProductImageZoom.tsx",
               "./islands/SearchControls.tsx",
@@ -101,8 +102,10 @@
               "deco-sites/shoppingbarra/sections/DesignSystem/DesignSystem.tsx",
               "deco-sites/shoppingbarra/sections/Footer/Footer.tsx",
               "deco-sites/shoppingbarra/sections/Footer/SecondaryFooter.tsx",
+              "deco-sites/shoppingbarra/sections/Header/CategoryHeader.tsx",
               "deco-sites/shoppingbarra/sections/Header/Header.tsx",
               "deco-sites/shoppingbarra/sections/Images/BannerGrid.tsx",
+              "deco-sites/shoppingbarra/sections/Images/CardGallery.tsx",
               "deco-sites/shoppingbarra/sections/Images/Carousel.tsx",
               "deco-sites/shoppingbarra/sections/Images/ImageGallery.tsx",
               "deco-sites/shoppingbarra/sections/Images/ShoppableBanner.tsx",
@@ -7403,6 +7406,48 @@
       "required": [],
       "title": "Props"
     },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL09wZXJhdGlvblRpbWUudHN4@OperationTimeProps": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "operationTimeWeek": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Operation Time Week"
+        },
+        "operationTimeWeekend": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Operation Time Weekend"
+        }
+      },
+      "required": [],
+      "title": "OperationTimeProps"
+    },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL09wZXJhdGlvblRpbWUudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "operationDescriptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL09wZXJhdGlvblRpbWUudHN4@OperationTimeProps"
+          },
+          "title": "Operation Descriptions"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/shoppingbarra/components/header/OperationTime.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@SKU": {
       "type": "object",
       "properties": {
@@ -8253,6 +8298,16 @@
                   },
                   {
                     "type": "string",
+                    "const": "OrangeChevronRight",
+                    "default": "OrangeChevronRight"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Timer",
+                    "default": "Timer"
+                  },
+                  {
+                    "type": "string",
                     "const": "Youtube",
                     "default": "Youtube"
                   }
@@ -9054,35 +9109,6 @@
       "required": [],
       "title": "deco-sites/shoppingbarra/sections/DesignSystem/DesignSystem.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@NewsletterForm": {
-      "type": "object",
-      "properties": {
-        "placeholder": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Placeholder"
-        },
-        "buttonText": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Button Text"
-        },
-        "helpText": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "html",
-          "title": "Help Text"
-        }
-      },
-      "required": [],
-      "title": "NewsletterForm"
-    },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Item": {
       "type": "object",
       "properties": {
@@ -9195,154 +9221,19 @@
       },
       "title": "SocialItem[]"
     },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@PaymentItem": {
-      "type": "object",
-      "properties": {
-        "label": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "Diners",
-              "default": "Diners"
-            },
-            {
-              "type": "string",
-              "const": "Elo",
-              "default": "Elo"
-            },
-            {
-              "type": "string",
-              "const": "Mastercard",
-              "default": "Mastercard"
-            },
-            {
-              "type": "string",
-              "const": "Pix",
-              "default": "Pix"
-            },
-            {
-              "type": "string",
-              "const": "Visa",
-              "default": "Visa"
-            }
-          ],
-          "type": "string",
-          "title": "Label"
-        }
-      },
-      "required": [
-        "label"
-      ],
-      "title": "PaymentItem"
-    },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@PaymentItem[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@PaymentItem"
-      },
-      "title": "PaymentItem[]"
-    },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@MobileApps": {
-      "type": "object",
-      "properties": {
-        "apple": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "Link to the app",
-          "title": "Apple"
-        },
-        "android": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "Link to the app",
-          "title": "Android"
-        }
-      },
-      "required": [],
-      "title": "MobileApps"
-    },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@RegionOptions": {
-      "type": "object",
-      "properties": {
-        "currency": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Item[]",
-          "title": "Currency"
-        },
-        "language": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Item[]",
-          "title": "Language"
-        }
-      },
-      "required": [],
-      "title": "RegionOptions"
-    },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Layout": {
       "type": "object",
       "properties": {
         "backgroundColor": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "Primary",
-              "default": "Primary"
-            },
-            {
-              "type": "string",
-              "const": "Secondary",
-              "default": "Secondary"
-            },
-            {
-              "type": "string",
-              "const": "Accent",
-              "default": "Accent"
-            },
-            {
-              "type": "string",
-              "const": "Base 100",
-              "default": "Base 100"
-            },
-            {
-              "type": "string",
-              "const": "Base 100 inverted",
-              "default": "Base 100 inverted"
-            }
-          ],
           "type": "string",
+          "const": "Primary",
+          "default": "Primary",
           "title": "Background Color"
         },
         "variation": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "Variation 1",
-              "default": "Variation 1"
-            },
-            {
-              "type": "string",
-              "const": "Variation 2",
-              "default": "Variation 2"
-            },
-            {
-              "type": "string",
-              "const": "Variation 3",
-              "default": "Variation 3"
-            },
-            {
-              "type": "string",
-              "const": "Variation 4",
-              "default": "Variation 4"
-            },
-            {
-              "type": "string",
-              "const": "Variation 5",
-              "default": "Variation 5"
-            }
-          ],
           "type": "string",
+          "const": "Variation 1",
+          "default": "Variation 1",
           "title": "Variation"
         },
         "hide": {
@@ -9442,31 +9333,6 @@
           ],
           "title": "Logo"
         },
-        "newsletter": {
-          "type": "object",
-          "properties": {
-            "title": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Title"
-            },
-            "description": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Description"
-            },
-            "form": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@NewsletterForm",
-              "title": "Form"
-            }
-          },
-          "required": [],
-          "title": "Newsletter"
-        },
         "sections": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Section[]",
           "title": "Sections"
@@ -9491,38 +9357,6 @@
           ],
           "title": "Social"
         },
-        "payments": {
-          "type": "object",
-          "properties": {
-            "title": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Title"
-            },
-            "items": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@PaymentItem[]",
-              "title": "Items"
-            }
-          },
-          "required": [
-            "items"
-          ],
-          "title": "Payments"
-        },
-        "mobileApps": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@MobileApps",
-          "title": "Mobile Apps"
-        },
-        "regionOptions": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@RegionOptions",
-          "title": "Region Options"
-        },
-        "extraLinks": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Item[]",
-          "title": "Extra Links"
-        },
         "backToTheTop": {
           "type": "object",
           "properties": {
@@ -9545,163 +9379,53 @@
       "required": [],
       "title": "deco-sites/shoppingbarra/components/footer/Footer.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps": {
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvZm9vdGVyL1NlY29uZGFyeUZvb3Rlci50c3g=@Props": {
       "type": "object",
       "properties": {
-        "placeholder": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Placeholder",
-          "description": "Search bar default placeholder message",
-          "default": "What are you looking for?"
-        },
-        "action": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Page path",
-          "description": "When user clicks on the search button, navigate it to",
-          "default": "/s"
-        },
-        "name": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Term name",
-          "description": "Querystring param used when navigating the user",
-          "default": "q"
-        },
-        "query": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Query"
-        }
-      },
-      "required": [],
-      "title": "EditableProps"
-    },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem": {
-      "type": "object",
-      "properties": {
-        "label": {
+        "text": {
           "type": "string",
-          "title": "Label"
-        },
-        "href": {
-          "type": "string",
-          "title": "Href"
-        },
-        "children": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "label": {
-                "type": "string",
-                "title": "Label"
-              },
-              "href": {
-                "type": "string",
-                "title": "Href"
-              },
-              "children": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "label": {
-                      "type": "string",
-                      "title": "Label"
-                    },
-                    "href": {
-                      "type": "string",
-                      "title": "Href"
-                    }
-                  },
-                  "required": [
-                    "label",
-                    "href"
-                  ]
-                },
-                "title": "Children"
-              }
-            },
-            "required": [
-              "label",
-              "href"
-            ]
-          },
-          "title": "Children"
-        },
-        "image": {
-          "type": "object",
-          "properties": {
-            "src": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-              "title": "Src"
-            },
-            "alt": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Alt"
-            }
-          },
-          "required": [],
-          "title": "Image"
+          "title": "Text"
         }
       },
       "required": [
-        "label",
-        "href"
+        "text"
       ],
-      "title": "NavItem"
+      "title": "deco-sites/shoppingbarra/components/footer/SecondaryFooter.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem[]": {
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL0NhdGVnb3J5SGVhZGVyLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "logo": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Logo"
+        }
+      },
+      "required": [
+        "logo"
+      ],
+      "title": "deco-sites/shoppingbarra/components/header/CategoryHeader.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL09wZXJhdGlvblRpbWUudHN4@OperationTimeProps[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem"
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL09wZXJhdGlvblRpbWUudHN4@OperationTimeProps"
       },
-      "title": "NavItem[]"
+      "title": "OperationTimeProps[]"
     },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@Props": {
       "type": "object",
       "properties": {
-        "alerts": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "title": "Alerts"
+        "operationTimes": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL09wZXJhdGlvblRpbWUudHN4@OperationTimeProps[]",
+          "title": "Operation Times"
         },
-        "searchbar": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps",
-          "title": "Search Bar"
-        },
-        "navItems": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem[]",
-          "title": "Navigation items",
-          "description": "Navigation items used both on mobile and desktop menus"
-        },
-        "products": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null",
-          "title": "Product suggestions",
-          "description": "Product suggestions displayed on search"
-        },
-        "suggestions": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Suggestion|null",
-          "title": "Enable Top Search terms"
+        "logo": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Logo"
         }
       },
       "required": [
-        "alerts"
+        "logo"
       ],
       "title": "deco-sites/shoppingbarra/components/header/Header.tsx@Props"
     },
@@ -9918,6 +9642,73 @@
         "banners"
       ],
       "title": "deco-sites/shoppingbarra/components/ui/BannerGrid.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9DYXJkR2FsbGVyeS50c3g=@Content": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        },
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Image"
+        },
+        "imageAlt": {
+          "type": "string",
+          "title": "Image Alt"
+        },
+        "featured": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Featured"
+        }
+      },
+      "required": [
+        "label",
+        "href",
+        "image",
+        "imageAlt"
+      ],
+      "title": "Content"
+    },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9DYXJkR2FsbGVyeS50c3g=@Content[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9DYXJkR2FsbGVyeS50c3g=@Content"
+      },
+      "title": "Content[]"
+    },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9DYXJkR2FsbGVyeS50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Title"
+            }
+          },
+          "required": [],
+          "title": "Header"
+        },
+        "list": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9DYXJkR2FsbGVyeS50c3g=@Content[]",
+          "title": "List"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/shoppingbarra/sections/Images/CardGallery.tsx@Props"
     },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Banner": {
       "type": "object",
@@ -10666,6 +10457,16 @@
               "type": "string",
               "const": "Zoom",
               "default": "Zoom"
+            },
+            {
+              "type": "string",
+              "const": "OrangeChevronRight",
+              "default": "OrangeChevronRight"
+            },
+            {
+              "type": "string",
+              "const": "Timer",
+              "default": "Timer"
             },
             {
               "type": "string",
@@ -13849,6 +13650,27 @@
         }
       }
     },
+    "Li9pc2xhbmRzL09wZXJhdGlvblRpbWUudHN4": {
+      "title": "./islands/OperationTime.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL09wZXJhdGlvblRpbWUudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/OperationTime.tsx"
+          ],
+          "default": "./islands/OperationTime.tsx"
+        }
+      }
+    },
     "Li9pc2xhbmRzL091dE9mU3RvY2sudHN4": {
       "title": "./islands/OutOfStock.tsx",
       "type": "object",
@@ -14451,6 +14273,11 @@
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0Zvb3Rlci9TZWNvbmRhcnlGb290ZXIudHN4": {
       "title": "deco-sites/shoppingbarra/sections/Footer/SecondaryFooter.tsx",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvZm9vdGVyL1NlY29uZGFyeUZvb3Rlci50c3g=@Props"
+        }
+      ],
       "required": [
         "__resolveType"
       ],
@@ -14461,6 +14288,27 @@
             "deco-sites/shoppingbarra/sections/Footer/SecondaryFooter.tsx"
           ],
           "default": "deco-sites/shoppingbarra/sections/Footer/SecondaryFooter.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hlYWRlci9DYXRlZ29yeUhlYWRlci50c3g=": {
+      "title": "deco-sites/shoppingbarra/sections/Header/CategoryHeader.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL0NhdGVnb3J5SGVhZGVyLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/shoppingbarra/sections/Header/CategoryHeader.tsx"
+          ],
+          "default": "deco-sites/shoppingbarra/sections/Header/CategoryHeader.tsx"
         }
       }
     },
@@ -14503,6 +14351,27 @@
             "deco-sites/shoppingbarra/sections/Images/BannerGrid.tsx"
           ],
           "default": "deco-sites/shoppingbarra/sections/Images/BannerGrid.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9DYXJkR2FsbGVyeS50c3g=": {
+      "title": "deco-sites/shoppingbarra/sections/Images/CardGallery.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9DYXJkR2FsbGVyeS50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/shoppingbarra/sections/Images/CardGallery.tsx"
+          ],
+          "default": "deco-sites/shoppingbarra/sections/Images/CardGallery.tsx"
         }
       }
     },
@@ -15939,6 +15808,9 @@
           "$ref": "#/definitions/Li9pc2xhbmRzL05ld3NsZXR0ZXIudHN4"
         },
         {
+          "$ref": "#/definitions/Li9pc2xhbmRzL09wZXJhdGlvblRpbWUudHN4"
+        },
+        {
           "$ref": "#/definitions/Li9pc2xhbmRzL091dE9mU3RvY2sudHN4"
         },
         {
@@ -16056,10 +15928,16 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0Zvb3Rlci9TZWNvbmRhcnlGb290ZXIudHN4"
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hlYWRlci9DYXRlZ29yeUhlYWRlci50c3g="
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hlYWRlci9IZWFkZXIudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9CYW5uZXJHcmlkLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9DYXJkR2FsbGVyeS50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9DYXJvdXNlbC50c3g="

@@ -11,8 +11,9 @@ export type Section = {
 };
 
 export default function FooterItems(
-  { sections, justify = false }: { sections: Section[]; justify: boolean },
+  { sections }: { sections: Section[] },
 ) {
+  const justify = false;
   return (
     <>
       {sections.length > 0 && (
