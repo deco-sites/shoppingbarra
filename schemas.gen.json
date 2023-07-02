@@ -9572,32 +9572,12 @@
       "type": "object",
       "properties": {
         "logo": {
-          "type": "object",
-          "properties": {
-            "image": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-              "title": "Image"
-            }
-          },
-          "required": [
-            "image"
-          ],
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
           "title": "Logo"
-        },
-        "href": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Href"
-        },
-        "alt": {
-          "type": "string",
-          "title": "Alt"
         }
       },
       "required": [
-        "alt"
+        "logo"
       ],
       "title": "deco-sites/shoppingbarra/components/header/CategoryHeader.tsx@Props"
     },
@@ -9611,37 +9591,17 @@
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@Props": {
       "type": "object",
       "properties": {
-        "descriptions": {
+        "operationTimes": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL09wZXJhdGlvblRpbWUudHN4@OperationTimeProps[]",
-          "title": "Descriptions"
+          "title": "Operation Times"
         },
         "logo": {
-          "type": "object",
-          "properties": {
-            "image": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-              "title": "Image"
-            }
-          },
-          "required": [
-            "image"
-          ],
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
           "title": "Logo"
-        },
-        "href": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Href"
-        },
-        "alt": {
-          "type": "string",
-          "title": "Alt"
         }
       },
       "required": [
-        "alt"
+        "logo"
       ],
       "title": "deco-sites/shoppingbarra/components/header/Header.tsx@Props"
     },
