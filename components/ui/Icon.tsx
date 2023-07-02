@@ -42,6 +42,7 @@ export type AvailableIcons =
   | "WhatsApp"
   | "XMark"
   | "Zoom"
+  | "OrangeChevronRight"
   | "Timer"
   | "Youtube";
 
