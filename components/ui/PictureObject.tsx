@@ -1,41 +1,41 @@
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
+import Image from "deco-sites/std/components/Image.tsx";
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 
 export interface Content {
   label: string;
   href: string;
+  imageAlt: string;
   image: LiveImage;
 }
 
 export interface Props {
   content: Content;
-  index: number;
+  highlight?: boolean;
 }
 
-export default function PictureObject({ content }: Props) {
+export default function PictureObject({ content, highlight }: Props) {
   return (
     <>
-      <Picture>
-        <img
-          src={content.image}
-          decoding="async"
-          loading="lazy"
-          class="rounded-xl object-cover w-full"
-        />
-      </Picture>
-
-      <div class="inline">
-        <div class="float-left mt-2 mb-5 text-l text-xs lg:text-base">
+      <Image
+        src={content.image}
+        alt={content.imageAlt}
+        decoding="async"
+        loading="lazy"
+        class="rounded-xl object-cover w-full"
+        {...(highlight
+          ? { width: 1200, height: 840 }
+          : { width: 358, height: 177 })}
+      />
+      <div class="flex justify-between items-center">
+        <div class="text-xs lg:text-base">
           {content.label}
         </div>
-        <div class="float-right mt-2 mb-5">
-          <Icon
-            width={20}
-            height={20}
-            id="OrangeChevronRight"
-          />
-        </div>
+        <Icon
+          width={20}
+          height={20}
+          id="OrangeChevronRight"
+        />
       </div>
     </>
   );

@@ -93,8 +93,8 @@
               "deco-sites/shoppingbarra/sections/DesignSystem/DesignSystem.tsx",
               "deco-sites/shoppingbarra/sections/Footer/Footer.tsx",
               "deco-sites/shoppingbarra/sections/Header/Header.tsx",
-              "deco-sites/shoppingbarra/sections/Home/FiquePorDentro.tsx",
               "deco-sites/shoppingbarra/sections/Images/BannerGrid.tsx",
+              "deco-sites/shoppingbarra/sections/Images/CardGallery.tsx",
               "deco-sites/shoppingbarra/sections/Images/Carousel.tsx",
               "deco-sites/shoppingbarra/sections/Images/ImageGallery.tsx",
               "deco-sites/shoppingbarra/sections/Images/ShoppableBanner.tsx",
@@ -9342,61 +9342,6 @@
       ],
       "title": "deco-sites/shoppingbarra/components/header/Header.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hvbWUvRmlxdWVQb3JEZW50cm8udHN4@Content": {
-      "type": "object",
-      "properties": {
-        "label": {
-          "type": "string",
-          "title": "Label"
-        },
-        "href": {
-          "type": "string",
-          "title": "Href"
-        },
-        "image": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Image"
-        }
-      },
-      "required": [
-        "label",
-        "href",
-        "image"
-      ],
-      "title": "Content"
-    },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hvbWUvRmlxdWVQb3JEZW50cm8udHN4@Content[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hvbWUvRmlxdWVQb3JEZW50cm8udHN4@Content"
-      },
-      "title": "Content[]"
-    },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hvbWUvRmlxdWVQb3JEZW50cm8udHN4@Props": {
-      "type": "object",
-      "properties": {
-        "header": {
-          "type": "object",
-          "properties": {
-            "title": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Title"
-            }
-          },
-          "required": [],
-          "title": "Header"
-        },
-        "list": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hvbWUvRmlxdWVQb3JEZW50cm8udHN4@Content[]",
-          "title": "List"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/shoppingbarra/sections/Home/FiquePorDentro.tsx@Props"
-    },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Banner": {
       "type": "object",
       "properties": {
@@ -9610,6 +9555,73 @@
         "banners"
       ],
       "title": "deco-sites/shoppingbarra/components/ui/BannerGrid.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9DYXJkR2FsbGVyeS50c3g=@Content": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        },
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Image"
+        },
+        "imageAlt": {
+          "type": "string",
+          "title": "Image Alt"
+        },
+        "featured": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Featured"
+        }
+      },
+      "required": [
+        "label",
+        "href",
+        "image",
+        "imageAlt"
+      ],
+      "title": "Content"
+    },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9DYXJkR2FsbGVyeS50c3g=@Content[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9DYXJkR2FsbGVyeS50c3g=@Content"
+      },
+      "title": "Content[]"
+    },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9DYXJkR2FsbGVyeS50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Title"
+            }
+          },
+          "required": [],
+          "title": "Header"
+        },
+        "list": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9DYXJkR2FsbGVyeS50c3g=@Content[]",
+          "title": "List"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/shoppingbarra/sections/Images/CardGallery.tsx@Props"
     },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Banner": {
       "type": "object",
@@ -13985,27 +13997,6 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hvbWUvRmlxdWVQb3JEZW50cm8udHN4": {
-      "title": "deco-sites/shoppingbarra/sections/Home/FiquePorDentro.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hvbWUvRmlxdWVQb3JEZW50cm8udHN4@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/shoppingbarra/sections/Home/FiquePorDentro.tsx"
-          ],
-          "default": "deco-sites/shoppingbarra/sections/Home/FiquePorDentro.tsx"
-        }
-      }
-    },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9CYW5uZXJHcmlkLnRzeA==": {
       "title": "deco-sites/shoppingbarra/sections/Images/BannerGrid.tsx",
       "type": "object",
@@ -14024,6 +14015,27 @@
             "deco-sites/shoppingbarra/sections/Images/BannerGrid.tsx"
           ],
           "default": "deco-sites/shoppingbarra/sections/Images/BannerGrid.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9DYXJkR2FsbGVyeS50c3g=": {
+      "title": "deco-sites/shoppingbarra/sections/Images/CardGallery.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9DYXJkR2FsbGVyeS50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/shoppingbarra/sections/Images/CardGallery.tsx"
+          ],
+          "default": "deco-sites/shoppingbarra/sections/Images/CardGallery.tsx"
         }
       }
     },
@@ -15532,10 +15544,10 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hlYWRlci9IZWFkZXIudHN4"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hvbWUvRmlxdWVQb3JEZW50cm8udHN4"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9CYW5uZXJHcmlkLnRzeA=="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9CYW5uZXJHcmlkLnRzeA=="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9DYXJkR2FsbGVyeS50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9DYXJvdXNlbC50c3g="
