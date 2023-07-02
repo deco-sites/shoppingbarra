@@ -8536,29 +8536,26 @@
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvU3RvcmVEaXJlY3Rpb25JZnJhbWUudHN4@iframeProps": {
       "type": "object",
       "properties": {
-        "mapsParameters": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Maps Parameters"
+        "source": {
+          "type": "string",
+          "title": "Source"
         },
-        "iframeHeigth": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Iframe Heigth"
+        "heigth": {
+          "type": "string",
+          "title": "Heigth"
         },
-        "iframeWidth": {
+        "width": {
           "type": [
             "string",
             "null"
           ],
-          "title": "Iframe Width"
+          "title": "Width"
         }
       },
-      "required": [],
+      "required": [
+        "source",
+        "heigth"
+      ],
       "title": "deco-sites/shoppingbarra/sections/Content/StoreDirectionIframe.tsx@iframeProps"
     },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvVGVzdGltb25pYWxzLnRzeA==@Testimonial": {

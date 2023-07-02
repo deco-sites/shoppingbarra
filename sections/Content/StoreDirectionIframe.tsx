@@ -1,23 +1,20 @@
 export interface iframeProps {
-  mapsParameters?: string;
-  iframeHeigth?: string;
-  iframeWidth?: string;
+  source: string;
+  heigth: string;
+  width?: string;
 }
 
 function StoreDirectionIframe(
-  { mapsParameters, iframeHeigth, iframeWidth }: iframeProps,
+  { source, heigth }: iframeProps,
 ) {
   return (
-    <div>
-      <iframe
-        src={`https://www.google.com/maps/embed?${mapsParameters}`}
-        width={iframeWidth}
-        height={iframeHeigth}
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      >
-      </iframe>
-    </div>
+    <iframe
+      src={source}
+      width="100%"
+      height={heigth}
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    />
   );
 }
 
