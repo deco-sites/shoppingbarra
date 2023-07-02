@@ -8,17 +8,12 @@ import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 export interface Banner {
   /** @description RegExp to enable this banner on the current URL. Use /feminino/* to display this banner on feminino category  */
   matcher: string;
-  /** @description text to be rendered on top of the image */
-  title?: string;
-  /** @description text to be rendered on top of the image */
-  subtitle?: string;
+  /** @default primary */
+  background: "primary" | "base-100" | "base-200";
   image: {
-    /** @description Image for big screens */
-    desktop: LiveImage;
-    /** @description Image for small screens */
-    mobile: LiveImage;
+    src: LiveImage;
     /** @description image alt text */
-    alt?: string;
+    alt: string;
   };
 }
 
@@ -27,38 +22,25 @@ function Banner({ banner }: SectionProps<ReturnType<typeof loader>>) {
     return null;
   }
 
-  const { title, subtitle, image } = banner;
+  const { image } = banner;
 
   return (
-    <div class="grid grid-cols-1 grid-rows-1">
-      <Picture preload class="col-start-1 col-span-1 row-start-1 row-span-1">
+    <div class="grid grid-cols-1 grid-rows-1 bg-primary">
+      <Picture
+        preload
+        class="col-start-1 col-span-1 row-start-1 row-span-1 p-2.5 mx-auto"
+      >
         <Source
-          src={image.mobile}
-          width={360}
-          height={120}
-          media="(max-width: 767px)"
-        />
-        <Source
-          src={image.desktop}
-          width={1440}
+          src={image.src}
+          width={900}
           height={200}
-          media="(min-width: 767px)"
         />
-        <img class="w-full" src={image.desktop} alt={image.alt ?? title} />
+        <img
+          class="w-full h-auto  max-w-4xl"
+          src={image.src}
+          alt={image.alt}
+        />
       </Picture>
-
-      <div class="container flex flex-col items-center justify-center sm:items-start col-start-1 col-span-1 row-start-1 row-span-1 w-full">
-        <h1>
-          <span class="text-5xl font-medium text-base-100">
-            {title}
-          </span>
-        </h1>
-        <h2>
-          <span class="text-xl font-medium text-base-100">
-            {subtitle}
-          </span>
-        </h2>
-      </div>
     </div>
   );
 }
