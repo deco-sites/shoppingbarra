@@ -1,12 +1,11 @@
 import { useSignal } from "@preact/signals";
 import Icon from "$store/components/ui/Icon.tsx";
-import Button from "$store/components/ui/Button.tsx";
 import Modal from "$store/components/ui/Modal.tsx";
 
 export interface OperationTimeProps {
   title?: string;
-  weekDescription?: string;
-  weekendDescription?: string;
+  operationTimeWeek?: string;
+  operationTimeWeekend?: string;
 }
 
 export interface Props {
@@ -18,13 +17,19 @@ function OperationTime({ operationDescriptions }: Props) {
 
   return (
     <>
-      <Button
-        class="text-white	text-xs font-bold flex items-center bg-transparent border-none normal-case"
+      <button
+        class="flex items-center text-white	text-xs font-bold text-left"
         onClick={() => open.value = true}
       >
-        <Icon id="Timer" width={16} height={17} strokeWidth={1} />
+        <Icon
+          class="mr-1.5"
+          id="Timer"
+          width={16}
+          height={17}
+          strokeWidth={1}
+        />
         Funcionamento do shopping
-      </Button>
+      </button>
       <Modal
         loading="lazy"
         title="Funcionamento do shopping"
@@ -37,15 +42,16 @@ function OperationTime({ operationDescriptions }: Props) {
         {operationDescriptions?.map((operationDescription) => (
           <div class="text-sm">
             <strong>{operationDescription.title}</strong>
-            <p>{operationDescription.weekDescription}</p>
-            <p class="mb-3">{operationDescription.weekendDescription}</p>
+            <p>{operationDescription.operationTimeWeek}</p>
+            <p class="mb-3">{operationDescription.operationTimeWeekend}</p>
           </div>
         ))}
-        <Button
+        <button
+          class="flex justify-end"
           onClick={() => open.value = false}
         >
-          Fechar
-        </Button>
+          <p class="border border-base-200 rounded py-2 px-4">Fechar</p>
+        </button>
       </Modal>
     </>
   );

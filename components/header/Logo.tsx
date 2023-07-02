@@ -4,15 +4,18 @@ export interface Props {
   logo?: {
     image: LiveImage;
   };
+  href?: string;
+  alt: string;
 }
 
-export default function Logo({ logo }: Props) {
+export default function Logo({ logo, alt, href }: Props) {
   return (
     <>
       {logo?.image && (
-        <a>
+        <a href={href} target="_blank">
           <img
             src={logo?.image}
+            alt={alt}
           />
         </a>
       )}

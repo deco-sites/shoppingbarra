@@ -94,6 +94,7 @@
               "deco-sites/shoppingbarra/sections/DesignSystem/DesignSystem.tsx",
               "deco-sites/shoppingbarra/sections/Footer/Footer.tsx",
               "deco-sites/shoppingbarra/sections/Footer/SecondaryFooter.tsx",
+              "deco-sites/shoppingbarra/sections/Header/CategoryHeader.tsx",
               "deco-sites/shoppingbarra/sections/Header/Header.tsx",
               "deco-sites/shoppingbarra/sections/Images/BannerGrid.tsx",
               "deco-sites/shoppingbarra/sections/Images/Carousel.tsx",
@@ -7095,19 +7096,19 @@
           ],
           "title": "Title"
         },
-        "weekDescription": {
+        "operationTimeWeek": {
           "type": [
             "string",
             "null"
           ],
-          "title": "Week Description"
+          "title": "Operation Time Week"
         },
-        "weekendDescription": {
+        "operationTimeWeekend": {
           "type": [
             "string",
             "null"
           ],
-          "title": "Weekend Description"
+          "title": "Operation Time Weekend"
         }
       },
       "required": [],
@@ -9235,6 +9236,39 @@
       "required": [],
       "title": "deco-sites/shoppingbarra/components/footer/Footer.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL0NhdGVnb3J5SGVhZGVyLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "logo": {
+          "type": "object",
+          "properties": {
+            "image": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Image"
+            }
+          },
+          "required": [
+            "image"
+          ],
+          "title": "Logo"
+        },
+        "href": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Href"
+        },
+        "alt": {
+          "type": "string",
+          "title": "Alt"
+        }
+      },
+      "required": [
+        "alt"
+      ],
+      "title": "deco-sites/shoppingbarra/components/header/CategoryHeader.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL09wZXJhdGlvblRpbWUudHN4@OperationTimeProps[]": {
       "type": "array",
       "items": {
@@ -9261,9 +9295,22 @@
             "image"
           ],
           "title": "Logo"
+        },
+        "href": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Href"
+        },
+        "alt": {
+          "type": "string",
+          "title": "Alt"
         }
       },
-      "required": [],
+      "required": [
+        "alt"
+      ],
       "title": "deco-sites/shoppingbarra/components/header/Header.tsx@Props"
     },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Banner": {
@@ -13875,6 +13922,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hlYWRlci9DYXRlZ29yeUhlYWRlci50c3g=": {
+      "title": "deco-sites/shoppingbarra/sections/Header/CategoryHeader.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvaGVhZGVyL0NhdGVnb3J5SGVhZGVyLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/shoppingbarra/sections/Header/CategoryHeader.tsx"
+          ],
+          "default": "deco-sites/shoppingbarra/sections/Header/CategoryHeader.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hlYWRlci9IZWFkZXIudHN4": {
       "title": "deco-sites/shoppingbarra/sections/Header/Header.tsx",
       "type": "object",
@@ -15423,6 +15491,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0Zvb3Rlci9TZWNvbmRhcnlGb290ZXIudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hlYWRlci9DYXRlZ29yeUhlYWRlci50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0hlYWRlci9IZWFkZXIudHN4"

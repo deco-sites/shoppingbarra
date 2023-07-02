@@ -36,7 +36,7 @@ const sectionStyles = {
 const containerStyles = {
   "sidebar-right": "h-full w-full sm:max-w-lg",
   "sidebar-left": "h-full w-full sm:max-w-lg",
-  center: "",
+  center: "w-full md:max-w-lg sm:max-w-xs",
 };
 
 const Modal = ({
@@ -81,7 +81,7 @@ const Modal = ({
         class={`w-full h-full flex bg-transparent ${sectionStyles[mode]}`}
       >
         <div
-          class={`bg-base-100 flex flex-col max-h-full rounded ${
+          class={`bg-base-100 flex flex-col max-h-full rounded mx-6 mb-6" ${
             containerStyles[mode]
           }`}
         >
@@ -95,7 +95,7 @@ const Modal = ({
               <Icon id="XMark" width={20} height={20} strokeWidth={2} />
             </Button>
           </header>
-          <div class="overflow-y-auto flex-grow flex flex-col">
+          <div class="overflow-y-auto flex-grow flex flex-col px-6 pb-6">
             {loading === "lazy" ? lazy.value && children : children}
           </div>
         </div>
