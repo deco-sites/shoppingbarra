@@ -1,74 +1,43 @@
-import Modals from "$store/islands/HeaderModals.tsx";
-import type { Image } from "deco-sites/std/components/types.ts";
-import type { EditableProps as SearchbarProps } from "$store/components/search/Searchbar.tsx";
-import type { LoaderReturnType } from "$live/types.ts";
-import type { Product, Suggestion } from "deco-sites/std/commerce/types.ts";
-
-import Alert from "./Alert.tsx";
-import Navbar from "./Navbar.tsx";
-import { headerHeight } from "./constants.ts";
-
-export interface NavItem {
-  label: string;
-  href: string;
-  children?: Array<{
-    label: string;
-    href: string;
-    children?: Array<{
-      label: string;
-      href: string;
-    }>;
-  }>;
-  image?: {
-    src?: Image;
-    alt?: string;
-  };
-}
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import { headerHeight, maxWidth } from "./constants.ts";
+import Logo from "$store/components/header/Logo.tsx";
+import OperationTime, {
+  OperationTimeProps,
+} from "$store/components/header/OperationTime.tsx";
 
 export interface Props {
-  alerts: string[];
-  /** @title Search Bar */
-  searchbar?: SearchbarProps;
-  /**
-   * @title Navigation items
-   * @description Navigation items used both on mobile and desktop menus
-   */
-  navItems?: NavItem[];
-
-  /**
-   * @title Product suggestions
-   * @description Product suggestions displayed on search
-   */
-  products?: LoaderReturnType<Product[] | null>;
-
-  /**
-   * @title Enable Top Search terms
-   */
-  suggestions?: LoaderReturnType<Suggestion | null>;
+  operationTimes?: OperationTimeProps[];
+  logo: LiveImage;
 }
 
-function Header({
-  alerts,
-  searchbar: _searchbar,
-  products,
-  navItems = [],
-  suggestions,
-}: Props) {
-  const searchbar = { ..._searchbar, products, suggestions };
-  return (
-    <>
-      <header style={{ height: headerHeight }}>
-        <div class="bg-base-100 fixed w-full z-50">
-          <Alert alerts={alerts} />
-          <Navbar items={navItems} searchbar={searchbar} />
-        </div>
+function Header({ logo, operationTimes }: Props) {
+  const _background =
+    "linear-gradient(90deg, rgba(255,255,255,1) 38%, rgba(236,124,35,1) 36%)";
 
-        <Modals
-          menu={{ items: navItems }}
-          searchbar={searchbar}
-        />
-      </header>
-    </>
+  return (
+    <header
+      class="flex justify-center"
+      style={{
+        background: _background,
+        height: headerHeight,
+      }}
+    >
+      <div
+        style={{ maxWidth: maxWidth, width: "100%" }}
+        class="flex items-center"
+      >
+        <div class="flex space-between w-full h-full items-center px-3">
+          <div class="flex items-center h-full w-5/12 md:w-3/12 pr-6">
+            <Logo href="/" logo={logo} alt="shopping barra logo" />
+          </div>
+          <div class="flex h-full items-center justify-end md:w-9/12">
+            <OperationTime
+              operationDescriptions={operationTimes}
+            />
+          </div>
+        </div>
+      </div>
+    </header>
   );
 }
 
