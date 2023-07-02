@@ -12,7 +12,7 @@ export interface Props {
 
 function Header({ logo, operationTimes }: Props) {
   const _background =
-    "linear-gradient(90deg, rgba(255,255,255,1) 36%, rgba(236,124,35,1) 36%)";
+    "linear-gradient(90deg, rgba(255,255,255,1) 38%, rgba(236,124,35,1) 36%)";
 
   return (
     <header

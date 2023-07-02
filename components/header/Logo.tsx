@@ -15,6 +15,8 @@ export default function Logo({ logo, alt, href }: Props) {
         alt={alt}
         width={153}
         height={45}
+        preload
+        fetchPriority="high"
       />
     </a>
   );
