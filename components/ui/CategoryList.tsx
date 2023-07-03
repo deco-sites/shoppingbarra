@@ -14,7 +14,7 @@ export interface Stores {
   localization: string;
   image: LiveImage;
   phone?: string;
-  whatsapp?: string
+  whatsapp?: string;
 }
 
 export interface Props {
