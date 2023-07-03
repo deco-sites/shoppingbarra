@@ -9986,21 +9986,6 @@
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvRmVhdHVyZWRCYW5uZXIudHN4@BannerProps": {
       "type": "object",
       "properties": {
-        "label": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Label"
-        },
-        "bannerTitle": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "text to be rendered on top of the image",
-          "title": "Banner Title"
-        },
         "background": {
           "anyOf": [
             {
@@ -10064,13 +10049,6 @@
       ],
       "title": "BannerProps"
     },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvRmVhdHVyZWRCYW5uZXIudHN4@BannerProps[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvRmVhdHVyZWRCYW5uZXIudHN4@BannerProps"
-      },
-      "title": "BannerProps[]"
-    },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvRmVhdHVyZWRCYW5uZXIudHN4@Props": {
       "type": "object",
       "properties": {
@@ -10089,7 +10067,7 @@
           "title": "Header"
         },
         "banner": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvRmVhdHVyZWRCYW5uZXIudHN4@BannerProps[]",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvRmVhdHVyZWRCYW5uZXIudHN4@BannerProps",
           "title": "Banner"
         }
       },
