@@ -7991,116 +7991,6 @@
       "required": [],
       "title": "deco-sites/shoppingbarra/components/ui/CategoryBanner.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQ2F0ZWdvcnlMaXN0LnRzeA==@Stores": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string",
-          "title": "Name"
-        },
-        "type": {
-          "type": "string",
-          "title": "Type"
-        },
-        "localization": {
-          "type": "string",
-          "title": "Localization"
-        },
-        "image": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Image"
-        },
-        "phone": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Phone"
-        },
-        "whatsapp": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Whatsapp"
-        }
-      },
-      "required": [
-        "name",
-        "type",
-        "localization",
-        "image"
-      ],
-      "title": "Stores"
-    },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQ2F0ZWdvcnlMaXN0LnRzeA==@Stores[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQ2F0ZWdvcnlMaXN0LnRzeA==@Stores"
-      },
-      "title": "Stores[]"
-    },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQ2F0ZWdvcnlMaXN0LnRzeA==@Props": {
-      "type": "object",
-      "properties": {
-        "header": {
-          "type": "object",
-          "properties": {
-            "title": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Title"
-            },
-            "description": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Description"
-            }
-          },
-          "required": [],
-          "title": "Header"
-        },
-        "selectLabel": {
-          "type": "string",
-          "title": "Select Label"
-        },
-        "list": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQ2F0ZWdvcnlMaXN0LnRzeA==@Stores[]",
-          "title": "List"
-        },
-        "layout": {
-          "type": "object",
-          "properties": {
-            "headerAlignment": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "center",
-                  "default": "center"
-                },
-                {
-                  "type": "string",
-                  "const": "left",
-                  "default": "left"
-                }
-              ],
-              "type": "string",
-              "title": "Header Alignment"
-            }
-          },
-          "required": [],
-          "title": "Layout"
-        }
-      },
-      "required": [
-        "selectLabel"
-      ],
-      "title": "deco-sites/shoppingbarra/components/ui/CategoryList.tsx@Props"
-    },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvQmVuZWZpdHMudHN4@Props": {
       "type": "object",
       "properties": {
@@ -9263,9 +9153,19 @@
       "type": "object",
       "properties": {
         "backgroundColor": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Primary",
+              "default": "Primary"
+            },
+            {
+              "type": "string",
+              "const": "Base 100 inverted",
+              "default": "Base 100 inverted"
+            }
+          ],
           "type": "string",
-          "const": "Primary",
-          "default": "Primary",
           "title": "Background Color"
         },
         "variation": {
@@ -9359,15 +9259,13 @@
               "title": "Image"
             },
             "description": {
-              "type": [
-                "string",
-                "null"
-              ],
+              "type": "string",
               "title": "Description"
             }
           },
           "required": [
-            "image"
+            "image",
+            "description"
           ],
           "title": "Logo"
         },
@@ -14239,11 +14137,6 @@
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NhdGVnb3J5L0NhdGVnb3J5TGlzdC50c3g=": {
       "title": "deco-sites/shoppingbarra/sections/Category/CategoryList.tsx",
       "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQ2F0ZWdvcnlMaXN0LnRzeA==@Props"
-        }
-      ],
       "required": [
         "__resolveType"
       ],

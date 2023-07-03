@@ -28,7 +28,7 @@ export interface SocialItem {
 }
 
 export interface Layout {
-  backgroundColor?: "Primary";
+  backgroundColor?: "Primary" | "Base 100 inverted";
   variation?: "Variation 1";
   hide?: {
     logo?: boolean;
@@ -46,7 +46,7 @@ export interface Layout {
 export interface Props {
   logo?: {
     image: LiveImage;
-    description?: string;
+    description: string;
   };
   sections?: Section[];
   social?: {
