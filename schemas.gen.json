@@ -103,6 +103,7 @@
               "deco-sites/shoppingbarra/sections/Header/Header.tsx",
               "deco-sites/shoppingbarra/sections/Images/BannerGrid.tsx",
               "deco-sites/shoppingbarra/sections/Images/Carousel.tsx",
+              "deco-sites/shoppingbarra/sections/Images/FeaturedBanner.tsx",
               "deco-sites/shoppingbarra/sections/Images/ImageGallery.tsx",
               "deco-sites/shoppingbarra/sections/Images/ShoppableBanner.tsx",
               "deco-sites/shoppingbarra/sections/Links/LinkTree.tsx",
@@ -9982,6 +9983,119 @@
       "required": [],
       "title": "deco-sites/shoppingbarra/components/ui/BannerCarousel.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvRmVhdHVyZWRCYW5uZXIudHN4@BannerProps": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Label"
+        },
+        "bannerTitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "text to be rendered on top of the image",
+          "title": "Banner Title"
+        },
+        "background": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "primary",
+              "default": "primary"
+            },
+            {
+              "type": "string",
+              "const": "base-100",
+              "default": "base-100"
+            },
+            {
+              "type": "string",
+              "const": "base-200",
+              "default": "base-200"
+            }
+          ],
+          "type": "string",
+          "default": "primary",
+          "title": "Background"
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Src"
+            },
+            "desktop": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Desktop"
+            },
+            "mobile": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Mobile"
+            },
+            "alt": {
+              "type": "string",
+              "title": "Alt"
+            }
+          },
+          "required": [
+            "src",
+            "desktop",
+            "mobile",
+            "alt"
+          ],
+          "title": "Image"
+        },
+        "href": {
+          "type": "string",
+          "description": "image href text link",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "background",
+        "image",
+        "href"
+      ],
+      "title": "BannerProps"
+    },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvRmVhdHVyZWRCYW5uZXIudHN4@BannerProps[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvRmVhdHVyZWRCYW5uZXIudHN4@BannerProps"
+      },
+      "title": "BannerProps[]"
+    },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvRmVhdHVyZWRCYW5uZXIudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Title"
+            }
+          },
+          "required": [],
+          "title": "Header"
+        },
+        "banner": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvRmVhdHVyZWRCYW5uZXIudHN4@BannerProps[]",
+          "title": "Banner"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/shoppingbarra/components/ui/FeaturedBanner.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Banner": {
       "type": "object",
       "properties": {
@@ -14480,6 +14594,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9GZWF0dXJlZEJhbm5lci50c3g=": {
+      "title": "deco-sites/shoppingbarra/sections/Images/FeaturedBanner.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvRmVhdHVyZWRCYW5uZXIudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/shoppingbarra/sections/Images/FeaturedBanner.tsx"
+          ],
+          "default": "deco-sites/shoppingbarra/sections/Images/FeaturedBanner.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4": {
       "title": "deco-sites/shoppingbarra/sections/Images/ImageGallery.tsx",
       "type": "object",
@@ -16013,6 +16148,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9DYXJvdXNlbC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9GZWF0dXJlZEJhbm5lci50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4"
