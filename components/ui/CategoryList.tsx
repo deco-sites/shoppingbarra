@@ -87,7 +87,7 @@ function CategoryList(props: Props) {
             index={index}
             class="flex flex-col gap-2 carousel-item bg-base-200 rounded-lg"
           >
-            <div class="card flex flex-col gap-2 w-[90px] h-[48px] lg:w-[196px] lg:h-[90px]">
+            <div class="card flex flex-col gap-2 w-[100px] h-[53px] lg:w-[196px] lg:h-[90px]">
               <figure class="self-center mix-blend-multiply">
                 <Image
                   class="lg:py-2 h-full w-auto max-h-[90px]"
