@@ -88,7 +88,7 @@ function ModalItems(
                   Telefone: <a class="font-light">{option.phone}</a>
                 </p>
               )}
-              {option?.phone && (
+              {option?.whatsapp && (
                 <p>
                   WhatsApp: <a class="font-light">{option.whatsapp}</a>
                 </p>
