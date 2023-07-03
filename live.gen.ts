@@ -13,10 +13,11 @@ import * as $$$$$4 from "./islands/HeaderButton.tsx";
 import * as $$$$$5 from "./islands/AddToCartButton.tsx";
 import * as $$$$$6 from "./islands/HeaderModals.tsx";
 import * as $$$$$7 from "./islands/SliderJS.tsx";
-import * as $$$$$8 from "./islands/ProductImageZoom.tsx";
-import * as $$$$$9 from "./islands/OperationTime.tsx";
-import * as $$$$$10 from "./islands/OutOfStock.tsx";
-import * as $$$$$11 from "./islands/SearchControls.tsx";
+import * as $$$$$8 from "./islands/SelectStore.tsx";
+import * as $$$$$9 from "./islands/ProductImageZoom.tsx";
+import * as $$$$$10 from "./islands/OperationTime.tsx";
+import * as $$$$$11 from "./islands/OutOfStock.tsx";
+import * as $$$$$12 from "./islands/SearchControls.tsx";
 import * as $$$$$$$$0 from "./sections/Footer/Footer.tsx";
 import * as $$$$$$$$1 from "./sections/Footer/SecondaryFooter.tsx";
 import * as $$$$$$$$2 from "./sections/DesignSystem/DesignSystem.tsx";
@@ -193,10 +194,11 @@ const manifest = {
     "./islands/HeaderModals.tsx": $$$$$6,
     "./islands/HeaderSearchbar.tsx": $$$$$3,
     "./islands/Newsletter.tsx": $$$$$0,
-    "./islands/OperationTime.tsx": $$$$$9,
-    "./islands/OutOfStock.tsx": $$$$$10,
-    "./islands/ProductImageZoom.tsx": $$$$$8,
-    "./islands/SearchControls.tsx": $$$$$11,
+    "./islands/OperationTime.tsx": $$$$$10,
+    "./islands/OutOfStock.tsx": $$$$$11,
+    "./islands/ProductImageZoom.tsx": $$$$$9,
+    "./islands/SearchControls.tsx": $$$$$12,
+    "./islands/SelectStore.tsx": $$$$$8,
     "./islands/ShippingSimulation.tsx": $$$$$2,
     "./islands/SliderJS.tsx": $$$$$7,
     "./islands/WishlistButton.tsx": $$$$$1,
