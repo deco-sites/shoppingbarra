@@ -3,7 +3,7 @@ import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 export interface Props {
   logo?: {
     image: LiveImage;
-    description?: string;
+    description: string;
   };
 }
 

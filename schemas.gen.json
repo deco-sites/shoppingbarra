@@ -9217,18 +9217,6 @@
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Layout": {
       "type": "object",
       "properties": {
-        "backgroundColor": {
-          "type": "string",
-          "const": "Primary",
-          "default": "Primary",
-          "title": "Background Color"
-        },
-        "variation": {
-          "type": "string",
-          "const": "Variation 1",
-          "default": "Variation 1",
-          "title": "Variation"
-        },
         "hide": {
           "type": "object",
           "properties": {
@@ -9314,15 +9302,13 @@
               "title": "Image"
             },
             "description": {
-              "type": [
-                "string",
-                "null"
-              ],
+              "type": "string",
               "title": "Description"
             }
           },
           "required": [
-            "image"
+            "image",
+            "description"
           ],
           "title": "Logo"
         },
@@ -9814,8 +9800,8 @@
             },
             {
               "type": "string",
-              "const": "base-200",
-              "default": "base-200"
+              "const": "base-300",
+              "default": "base-300"
             }
           ],
           "type": "string",
