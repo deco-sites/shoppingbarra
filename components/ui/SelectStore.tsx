@@ -64,18 +64,24 @@ function StoreModal(
               alt={option.name}
               width={200}
               height={200}
-            />    
+            />
             <div class="flex flex-col gap-2">
               {option.type && <p>{option.type}</p>}
               {option.localization && <p>{option.localization}</p>}
               {option.phone && (
                 <p>
-                  Telefone: <a href={`tel:${option.phone}`} class="font-light">{option.phone}</a>
+                  Telefone:{" "}
+                  <a href={`tel:${option.phone}`} class="font-light">
+                    {option.phone}
+                  </a>
                 </p>
               )}
               {option.whatsapp && (
                 <p>
-                  WhatsApp: <a href={`tel:${option.whatsapp}`} class="font-light">{option.whatsapp}</a>
+                  WhatsApp:{" "}
+                  <a href={`tel:${option.whatsapp}`} class="font-light">
+                    {option.whatsapp}
+                  </a>
                 </p>
               )}
             </div>
