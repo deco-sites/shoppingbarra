@@ -1,12 +1,11 @@
-import Image from "deco-sites/std/components/Image.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
+import Header from "$store/components/ui/SectionHeader.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
+import SelectStore from "$store/islands/SelectStore.tsx";
+import SliderJS from "$store/islands/SliderJS.tsx";
+import Image from "deco-sites/std/components/Image.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import { useId } from "preact/hooks";
-import SliderJS from "$store/islands/SliderJS.tsx";
-import Header from "$store/components/ui/SectionHeader.tsx";
-import SelectStore from "$store/components/ui/SelectStore.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
-import Modals from "$store/components/header/Modals.tsx";
 
 export interface Stores {
   name: string;
@@ -73,7 +72,7 @@ function CategoryList(props: Props) {
         description={header.description || ""}
         alignment={layout.headerAlignment || "center"}
       />
-      <div class="container flex m-auto max-w-[679px] min-w-[240px] md:min-w-[640px]">
+      <div class="container dropdown flex m-auto max-w-[679px] min-w-[240px] md:min-w-[640px]">
         <div class="flex items-center bg-[#f3f0ed] px-2 rounded-l-lg">
           <Icon id="Search" width={24} height={24} />
         </div>
@@ -81,30 +80,24 @@ function CategoryList(props: Props) {
       </div>
       <Slider class="carousel carousel-start gap-4 row-start-5 row-end-5">
         {newList.map((
-          { name, type, localization, image, phone },
+          { name, image },
           index,
         ) => (
           <Slider.Item
             index={index}
-            class="flex flex-col gap-2 carousel-item bg-base-200"
+            class="flex flex-col gap-2 carousel-item bg-base-200 rounded-lg"
           >
-            <div
-              href="#"
-              class="flex flex-col gap-2 lg:w-[196px] lg:h-[90px]"
-            >
-              {image &&
-                (
-                  <figure class="self-center mix-blend-multiply">
-                    <Image
-                      class="card h-full"
-                      src={image}
-                      alt={name || type || localization}
-                      width={105}
-                      height={90}
-                      loading="lazy"
-                    />
-                  </figure>
-                )}
+            <div class="card flex flex-col gap-2 w-[90px] h-[48px] lg:w-[196px] lg:h-[90px]">
+              <figure class="self-center mix-blend-multiply">
+                <Image
+                  class="lg:py-2 h-full w-auto max-h-[90px]"
+                  src={image}
+                  alt={name}
+                  width={105}
+                  loading={index < 7 ? "eager" : "lazy"}
+                  preload={index < 7 ? true : false}
+                />
+              </figure>
             </div>
           </Slider.Item>
         ))}

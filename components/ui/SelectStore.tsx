@@ -1,19 +1,17 @@
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-import { useSignal } from "@preact/signals";
-import Modal from "$store/components/ui/Modal.tsx";
 import { Stores } from "$store/components/ui/CategoryList.tsx";
+import Modal from "$store/components/ui/Modal.tsx";
+import { useSignal } from "@preact/signals";
 import Image from "deco-sites/std/components/Image.tsx";
-import { useEffect } from "preact/hooks";
 
 export interface SearchbarItemsProps {
   options: Stores[];
-  onClickFunction: (index: number) => void;
+  onClick: (index: number) => void;
 }
 
 export interface ModalItemsProps {
-  option: Stores;
-  isStoreDetailsOpen: boolean;
-  onCloseFunction: () => void;
+  option: Stores | null;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 export interface Props {
@@ -21,27 +19,33 @@ export interface Props {
   options: Stores[];
 }
 
-function SearchbarItems({ options, onClickFunction }: SearchbarItemsProps) {
+function SearchbarItems({ options, onClick }: SearchbarItemsProps) {
   return (
     <>
-      {options.map((
-        { name },
-        index,
-      ) => (
-        <li id={String(index)}>
-          <button
-            onClick={() => onClickFunction(index)}
-          >
-            {name.toUpperCase()}
-          </button>
-        </li>
-      ))}
+      {options.length
+        ? options.map((
+          { name },
+          index,
+        ) => (
+          <li key={index}>
+            <button
+              onClick={() => onClick(index)}
+            >
+              {name.toUpperCase()}
+            </button>
+          </li>
+        ))
+        : (
+          <li>
+            Sem resultados para essa pesquisa.
+          </li>
+        )}
     </>
   );
 }
 
-function ModalItems(
-  { option, isStoreDetailsOpen, onCloseFunction }: ModalItemsProps,
+function StoreModal(
+  { option, isOpen, onClose }: ModalItemsProps,
 ) {
   return (
     <>
@@ -50,46 +54,35 @@ function ModalItems(
           loading="lazy"
           title={option.name.toUpperCase()}
           mode="center"
-          open={isStoreDetailsOpen}
-          onClose={() => onCloseFunction()}
+          open={isOpen}
+          onClose={() => onClose()}
         >
-          <div class="container flex">
-            <div
-              href="#"
-              class="flex flex-col gap-2 lg:w-[196px] lg:h-[90px] self-center"
-            >
-              <figure class="self-center mix-blend-multiply">
-                <Image
-                  class="card h-full"
-                  src={option.image}
-                  alt={option.name ||
-                    option.type ||
-                    option.localization}
-                  width={105}
-                  height={90}
-                  loading="eager"
-                />
-              </figure>
-            </div>
-            <div class="flex-column pl-4">
-              <p>{option.type}</p>
-              <p>{option.localization}</p>
-
-              {option?.phone && (
+          <div class="container">
+            <Image
+              class="card h-full"
+              src={option.image}
+              alt={option.name}
+              width={200}
+              height={200}
+            />    
+            <div class="flex flex-col gap-2">
+              {option.type && <p>{option.type}</p>}
+              {option.localization && <p>{option.localization}</p>}
+              {option.phone && (
                 <p>
-                  Telefone: <a class="font-light">{option.phone}</a>
+                  Telefone: <a href={`tel:${option.phone}`} class="font-light">{option.phone}</a>
                 </p>
               )}
-              {option?.whatsapp && (
+              {option.whatsapp && (
                 <p>
-                  WhatsApp: <a class="font-light">{option.whatsapp}</a>
+                  WhatsApp: <a href={`tel:${option.whatsapp}`} class="font-light">{option.whatsapp}</a>
                 </p>
               )}
             </div>
           </div>
           <button
             class="flex justify-end"
-            onClick={() => onCloseFunction()}
+            onClick={() => onClose()}
           >
             <p class="border border-base-200 rounded py-2 px-4">Fechar</p>
           </button>
@@ -109,32 +102,28 @@ export default function SelectStore(props: Props) {
         localization: "Piso teste",
         image:
           "https://ik.imagekit.io/decocx/tr:w-680,h-680/https:/ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/fdcb3c8f-d629-485e-bf70-8060bd8a9f65",
-        phone: "(21) 11111-1111",
+        phone: "21 11111-1111",
       },
     ],
   } = props;
-  const isStoreDetailsOpen = useSignal(false);
-  const indexStore = useSignal(0);
-  const slicedOptions = useSignal(options);
+  const selectedStoreIndex = useSignal<number | null>(null);
   const inputValue = useSignal("");
 
   const searchbarItemsFunction = (index: number) => {
-    indexStore.value = index;
-    isStoreDetailsOpen.value = true;
+    selectedStoreIndex.value = index;
   };
   const modalItemsFunction = () => {
-    isStoreDetailsOpen.value = false;
+    selectedStoreIndex.value = null;
   };
 
-  useEffect(() => {
-    slicedOptions.value = options.filter((item) =>
-      item.name.toUpperCase().includes(inputValue.value.toUpperCase())
-    );
-  }, [inputValue.value]);
+  const slicedOptions = options.filter((item) =>
+    item.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+      .includes(inputValue.value.toLowerCase())
+  );
 
   return (
     <>
-      <div class="dropdown w-full p-3 rounded-r-lg text-[#3a3c3e] font-extralight bg-[#f3f0ed]">
+      <div class="w-full p-3 rounded-r-lg text-[#3a3c3e] font-extralight bg-[#f3f0ed]">
         <input
           class="w-full m-1 bg-[#f3f0ed]"
           type="text"
@@ -143,19 +132,21 @@ export default function SelectStore(props: Props) {
             inputValue.value = e.currentTarget.value;
           }}
         />
-        <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-[98%]">
-          {
+        <ul className="left-0 p-2 shadow menu dropdown-content z-10 bg-base-100 rounded-box w-full">
+          <div class="overflow-y-auto max-h-80 flex flex-col">
             <SearchbarItems
-              options={slicedOptions.value}
-              onClickFunction={searchbarItemsFunction}
+              options={slicedOptions}
+              onClick={searchbarItemsFunction}
             />
-          }
+          </div>
         </ul>
       </div>
-      <ModalItems
-        option={slicedOptions.value[indexStore.value]}
-        isStoreDetailsOpen={isStoreDetailsOpen.value}
-        onCloseFunction={modalItemsFunction}
+      <StoreModal
+        option={selectedStoreIndex.value !== null
+          ? options[selectedStoreIndex.value]
+          : null}
+        isOpen={selectedStoreIndex.value !== null}
+        onClose={modalItemsFunction}
       />
     </>
   );

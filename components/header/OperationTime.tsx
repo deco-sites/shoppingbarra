@@ -40,7 +40,7 @@ function OperationTime({ operationDescriptions }: Props) {
         }}
       >
         {operationDescriptions?.map((operationDescription) => (
-          <div class="text-sm">
+          <div class="text-sm mt-4">
             <strong>{operationDescription.title}</strong>
             <p>{operationDescription.operationTimeWeek}</p>
             <p class="mb-3">{operationDescription.operationTimeWeekend}</p>
