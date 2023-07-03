@@ -85,7 +85,7 @@ const Modal = ({
             containerStyles[mode]
           }`}
         >
-          <header class="flex px-4 py-6 justify-between items-center border-base-200">
+          <header class="flex pl-6 pr-2 pt-2 justify-between items-center border-base-200">
             <div class="flex gap-5 items-center">
               <h1>
                 <span class="text-lg">{title}</span>

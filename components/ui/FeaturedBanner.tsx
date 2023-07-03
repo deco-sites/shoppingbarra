@@ -4,7 +4,7 @@ import Header from "$store/components/ui/SectionHeader.tsx";
 
 export interface BannerProps {
   /** @default primary */
-  background: "primary" | "base-100" | "base-200" | "base-200";
+  background: "primary" | "base-100" | "base-200" | "base-300";
   image: {
     /** @description desktop otimized image */
     desktop: LiveImage;
