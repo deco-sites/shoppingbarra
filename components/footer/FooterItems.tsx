@@ -55,7 +55,10 @@ export default function FooterItems(
                   <ul class={`gap-0.5 text-base font-extralight mt-4`}>
                     {section.items?.map((item) => (
                       <li>
-                        <a href={item.href} class="block py-1 link link-hover min-h-[48px]">
+                        <a
+                          href={item.href}
+                          class="block py-1 link link-hover min-h-[48px]"
+                        >
                           {item.label}
                         </a>
                       </li>
