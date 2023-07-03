@@ -86,7 +86,7 @@ function CategoryList(props: Props) {
         ) => (
           <Slider.Item
             index={index}
-            class="flex flex-col gap-2 carousel-item bg-[#f3f0ed]"
+            class="flex flex-col gap-2 carousel-item bg-base-200"
           >
             <div
               href="#"
