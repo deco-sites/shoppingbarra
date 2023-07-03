@@ -10,8 +10,8 @@ import Modals from "$store/components/header/Modals.tsx";
 
 export interface Stores {
   name: string;
-  type: string;
-  localization: string;
+  type?: string;
+  localization?: string;
   image: LiveImage;
   phone?: string;
   whatsapp?: string;

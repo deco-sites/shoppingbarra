@@ -7455,7 +7455,7 @@
       "format": "image-uri",
       "title": "Image"
     },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvU2VsZWN0U3RvcmUudHN4@FindStoreOptions": {
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQ2F0ZWdvcnlMaXN0LnRzeA==@Stores": {
       "type": "object",
       "properties": {
         "name": {
@@ -7463,11 +7463,17 @@
           "title": "Name"
         },
         "type": {
-          "type": "string",
+          "type": [
+            "string",
+            "null"
+          ],
           "title": "Type"
         },
         "localization": {
-          "type": "string",
+          "type": [
+            "string",
+            "null"
+          ],
           "title": "Localization"
         },
         "image": {
@@ -7491,18 +7497,16 @@
       },
       "required": [
         "name",
-        "type",
-        "localization",
         "image"
       ],
-      "title": "FindStoreOptions"
+      "title": "Stores"
     },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvU2VsZWN0U3RvcmUudHN4@FindStoreOptions[]": {
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQ2F0ZWdvcnlMaXN0LnRzeA==@Stores[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvU2VsZWN0U3RvcmUudHN4@FindStoreOptions"
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQ2F0ZWdvcnlMaXN0LnRzeA==@Stores"
       },
-      "title": "FindStoreOptions[]"
+      "title": "Stores[]"
     },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvU2VsZWN0U3RvcmUudHN4@Props": {
       "type": "object",
@@ -7512,7 +7516,7 @@
           "title": "Select Label"
         },
         "options": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvU2VsZWN0U3RvcmUudHN4@FindStoreOptions[]",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQ2F0ZWdvcnlMaXN0LnRzeA==@Stores[]",
           "title": "Options"
         }
       },
@@ -7990,55 +7994,6 @@
       },
       "required": [],
       "title": "deco-sites/shoppingbarra/components/ui/CategoryBanner.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQ2F0ZWdvcnlMaXN0LnRzeA==@Stores": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string",
-          "title": "Name"
-        },
-        "type": {
-          "type": "string",
-          "title": "Type"
-        },
-        "localization": {
-          "type": "string",
-          "title": "Localization"
-        },
-        "image": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Image"
-        },
-        "phone": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Phone"
-        },
-        "whatsapp": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Whatsapp"
-        }
-      },
-      "required": [
-        "name",
-        "type",
-        "localization",
-        "image"
-      ],
-      "title": "Stores"
-    },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQ2F0ZWdvcnlMaXN0LnRzeA==@Stores[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQ2F0ZWdvcnlMaXN0LnRzeA==@Stores"
-      },
-      "title": "Stores[]"
     },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQ2F0ZWdvcnlMaXN0LnRzeA==@Props": {
       "type": "object",

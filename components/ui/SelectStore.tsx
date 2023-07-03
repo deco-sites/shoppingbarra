@@ -1,32 +1,24 @@
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import { useSignal } from "@preact/signals";
 import Modal from "$store/components/ui/Modal.tsx";
+import { Stores } from "$store/components/ui/CategoryList.tsx";
 import Image from "deco-sites/std/components/Image.tsx";
 import { useEffect } from "preact/hooks";
 
-export interface FindStoreOptions {
-  name: string;
-  type: string;
-  localization: string;
-  image: LiveImage;
-  phone?: string;
-  whatsapp?: string;
-}
-
 export interface SearchbarItemsProps {
-  options: FindStoreOptions[];
+  options: Stores[];
   onClickFunction: (index: number) => void;
 }
 
 export interface ModalItemsProps {
-  option: FindStoreOptions;
+  option: Stores;
   isStoreDetailsOpen: boolean;
   onCloseFunction: () => void;
 }
 
 export interface Props {
   selectLabel: string;
-  options: FindStoreOptions[];
+  options: Stores[];
 }
 
 function SearchbarItems({ options, onClickFunction }: SearchbarItemsProps) {
