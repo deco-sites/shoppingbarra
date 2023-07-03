@@ -49,51 +49,53 @@ function StoreModal(
 ) {
   return (
     <>
-      {option && (
-        <Modal
-          loading="lazy"
-          title={option.name.toUpperCase()}
-          mode="center"
-          open={isOpen}
-          onClose={() => onClose()}
-        >
-          <div class="container">
-            <Image
-              class="card h-full"
-              src={option.image}
-              alt={option.name}
-              width={200}
-              height={200}
-            />
-            <div class="flex flex-col gap-2">
-              {option.type && <p>{option.type}</p>}
-              {option.localization && <p>{option.localization}</p>}
-              {option.phone && (
-                <p>
-                  Telefone:{" "}
-                  <a href={`tel:${option.phone}`} class="font-light">
-                    {option.phone}
-                  </a>
-                </p>
-              )}
-              {option.whatsapp && (
-                <p>
-                  WhatsApp:{" "}
-                  <a href={`tel:${option.whatsapp}`} class="font-light">
-                    {option.whatsapp}
-                  </a>
-                </p>
-              )}
+      <Modal
+        loading="lazy"
+        title={option?.name.toUpperCase()}
+        mode="center"
+        open={isOpen}
+        onClose={() => onClose()}
+      >
+        {option && (
+          <>
+            <div class="container">
+              <Image
+                class="card h-full"
+                src={option.image}
+                alt={option.name}
+                width={200}
+                height={200}
+              />
+              <div class="flex flex-col gap-2">
+                {option.type && <p>{option.type}</p>}
+                {option.localization && <p>{option.localization}</p>}
+                {option.phone && (
+                  <p>
+                    Telefone:{" "}
+                    <a href={`tel:${option.phone}`} class="font-light">
+                      {option.phone}
+                    </a>
+                  </p>
+                )}
+                {option.whatsapp && (
+                  <p>
+                    WhatsApp:{" "}
+                    <a href={`tel:${option.whatsapp}`} class="font-light">
+                      {option.whatsapp}
+                    </a>
+                  </p>
+                )}
+              </div>
             </div>
-          </div>
-          <button
-            class="flex justify-end"
-            onClick={() => onClose()}
-          >
-            <p class="border border-base-200 rounded py-2 px-4">Fechar</p>
-          </button>
-        </Modal>
-      )}
+            <button
+              class="flex justify-end"
+              onClick={() => onClose()}
+            >
+              <p class="border border-base-200 rounded py-2 px-4">Fechar</p>
+            </button>
+          </>
+        )}
+      </Modal>
     </>
   );
 }
@@ -115,10 +117,10 @@ export default function SelectStore(props: Props) {
   const selectedStoreIndex = useSignal<number | null>(null);
   const inputValue = useSignal("");
 
-  const searchbarItemsFunction = (index: number) => {
+  const handleSelect = (index: number) => {
     selectedStoreIndex.value = index;
   };
-  const modalItemsFunction = () => {
+  const handleClose = () => {
     selectedStoreIndex.value = null;
   };
 
@@ -134,25 +136,29 @@ export default function SelectStore(props: Props) {
           class="w-full m-1 bg-[#f3f0ed]"
           type="text"
           placeholder={selectLabel}
+          tabIndex={0}
           onChange={(e) => {
             inputValue.value = e.currentTarget.value;
           }}
         />
-        <ul className="left-0 p-2 shadow menu dropdown-content z-10 bg-base-100 rounded-box w-full">
+        <ul
+          tabIndex={0}
+          className="left-0 p-2 shadow menu dropdown-content z-10 bg-base-100 rounded-box w-full"
+        >
           <div class="overflow-y-auto max-h-80 flex flex-col">
             <SearchbarItems
               options={slicedOptions}
-              onClick={searchbarItemsFunction}
+              onClick={handleSelect}
             />
           </div>
         </ul>
       </div>
       <StoreModal
         option={selectedStoreIndex.value !== null
-          ? options[selectedStoreIndex.value]
+          ? slicedOptions[selectedStoreIndex.value]
           : null}
         isOpen={selectedStoreIndex.value !== null}
-        onClose={modalItemsFunction}
+        onClose={handleClose}
       />
     </>
   );
