@@ -4,9 +4,8 @@ import Header from "$store/components/ui/SectionHeader.tsx";
 
 export interface BannerProps {
   /** @default primary */
-  background: "primary" | "base-100" | "base-200";
+  background: "primary" | "base-100" | "base-200" | "base-200";
   image: {
-    src: LiveImage;
     /** @description desktop otimized image */
     desktop: LiveImage;
     /** @description mobile otimized image */
@@ -17,6 +16,13 @@ export interface BannerProps {
   /** @description image href text link*/
   href: string;
 }
+
+const BACKGROUND = {
+  "primary": "bg-primary",
+  "base-100": "bg-base-100",
+  "base-200": "bg-base-200",
+  "base-300": "bg-base-300",
+};
 
 export interface Props {
   header?: {
@@ -31,12 +37,10 @@ function FeaturedBanner(props: Props) {
       title: "",
     },
     banner = {
-      bannerTitle: "",
-      background: "",
+      background: "primary",
       image: {
         desktop: "",
         mobile: "",
-        src: "",
         alt: "",
       },
       href: "/",
@@ -44,7 +48,11 @@ function FeaturedBanner(props: Props) {
   } = props;
 
   return (
-    <div class="grid grid-cols-1 grid-rows-1 bg-base-200 py-10 mt-10">
+    <div
+      class={`grid grid-cols-1 grid-rows-1 ${
+        BACKGROUND[banner.background]
+      } py-10 mt-10`}
+    >
       <Header
         title={header.title}
         description=""

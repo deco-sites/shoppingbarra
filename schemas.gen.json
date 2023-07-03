@@ -9754,6 +9754,11 @@
               "type": "string",
               "const": "base-200",
               "default": "base-200"
+            },
+            {
+              "type": "string",
+              "const": "base-200",
+              "default": "base-200"
             }
           ],
           "type": "string",
@@ -9763,10 +9768,6 @@
         "image": {
           "type": "object",
           "properties": {
-            "src": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-              "title": "Src"
-            },
             "desktop": {
               "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
               "title": "Desktop"
@@ -9781,7 +9782,6 @@
             }
           },
           "required": [
-            "src",
             "desktop",
             "mobile",
             "alt"
