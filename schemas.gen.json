@@ -74,6 +74,7 @@
               "./islands/OutOfStock.tsx",
               "./islands/ProductImageZoom.tsx",
               "./islands/SearchControls.tsx",
+              "./islands/SelectStore.tsx",
               "./islands/ShippingSimulation.tsx",
               "./islands/SliderJS.tsx",
               "./islands/WishlistButton.tsx",
@@ -7449,6 +7450,78 @@
       "required": [],
       "title": "deco-sites/shoppingbarra/components/header/OperationTime.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
+      "type": "string",
+      "format": "image-uri",
+      "title": "Image"
+    },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvU2VsZWN0U3RvcmUudHN4@FindStoreOptions": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name"
+        },
+        "type": {
+          "type": "string",
+          "title": "Type"
+        },
+        "localization": {
+          "type": "string",
+          "title": "Localization"
+        },
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Image"
+        },
+        "phone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Phone"
+        },
+        "whatsapp": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Whatsapp"
+        }
+      },
+      "required": [
+        "name",
+        "type",
+        "localization",
+        "image"
+      ],
+      "title": "FindStoreOptions"
+    },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvU2VsZWN0U3RvcmUudHN4@FindStoreOptions[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvU2VsZWN0U3RvcmUudHN4@FindStoreOptions"
+      },
+      "title": "FindStoreOptions[]"
+    },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvU2VsZWN0U3RvcmUudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "selectLabel": {
+          "type": "string",
+          "title": "Select Label"
+        },
+        "options": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvU2VsZWN0U3RvcmUudHN4@FindStoreOptions[]",
+          "title": "Options"
+        }
+      },
+      "required": [
+        "selectLabel",
+        "options"
+      ],
+      "title": "deco-sites/shoppingbarra/components/ui/SelectStore.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@SKU": {
       "type": "object",
       "properties": {
@@ -7843,11 +7916,6 @@
       ],
       "title": "deco-cx/live/sections/UseSlot.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
-      "type": "string",
-      "format": "image-uri",
-      "title": "Image"
-    },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQ2F0ZWdvcnlCYW5uZXIudHN4@Banner": {
       "type": "object",
       "properties": {
@@ -7923,59 +7991,56 @@
       "required": [],
       "title": "deco-sites/shoppingbarra/components/ui/CategoryBanner.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NhdGVnb3J5L0NhdGVnb3J5TGlzdC50c3g=@Category": {
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQ2F0ZWdvcnlMaXN0LnRzeA==@Stores": {
       "type": "object",
       "properties": {
-        "tag": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Tag"
-        },
-        "label": {
+        "name": {
           "type": "string",
-          "title": "Label"
+          "title": "Name"
         },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
+        "type": {
+          "type": "string",
+          "title": "Type"
         },
-        "href": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Href"
+        "localization": {
+          "type": "string",
+          "title": "Localization"
         },
         "image": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
           "title": "Image"
         },
-        "buttonText": {
+        "phone": {
           "type": [
             "string",
             "null"
           ],
-          "title": "Button Text"
+          "title": "Phone"
+        },
+        "whatsapp": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Whatsapp"
         }
       },
       "required": [
-        "label"
+        "name",
+        "type",
+        "localization",
+        "image"
       ],
-      "title": "Category"
+      "title": "Stores"
     },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NhdGVnb3J5L0NhdGVnb3J5TGlzdC50c3g=@Category[]": {
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQ2F0ZWdvcnlMaXN0LnRzeA==@Stores[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NhdGVnb3J5L0NhdGVnb3J5TGlzdC50c3g=@Category"
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQ2F0ZWdvcnlMaXN0LnRzeA==@Stores"
       },
-      "title": "Category[]"
+      "title": "Stores[]"
     },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NhdGVnb3J5L0NhdGVnb3J5TGlzdC50c3g=@Props": {
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQ2F0ZWdvcnlMaXN0LnRzeA==@Props": {
       "type": "object",
       "properties": {
         "header": {
@@ -7999,8 +8064,12 @@
           "required": [],
           "title": "Header"
         },
+        "selectLabel": {
+          "type": "string",
+          "title": "Select Label"
+        },
         "list": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NhdGVnb3J5L0NhdGVnb3J5TGlzdC50c3g=@Category[]",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQ2F0ZWdvcnlMaXN0LnRzeA==@Stores[]",
           "title": "List"
         },
         "layout": {
@@ -8021,53 +8090,16 @@
               ],
               "type": "string",
               "title": "Header Alignment"
-            },
-            "categoryCard": {
-              "type": "object",
-              "properties": {
-                "textPosition": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "top",
-                      "default": "top"
-                    },
-                    {
-                      "type": "string",
-                      "const": "bottom",
-                      "default": "bottom"
-                    }
-                  ],
-                  "type": "string",
-                  "title": "Text Position"
-                },
-                "textAlignment": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "center",
-                      "default": "center"
-                    },
-                    {
-                      "type": "string",
-                      "const": "left",
-                      "default": "left"
-                    }
-                  ],
-                  "type": "string",
-                  "title": "Text Alignment"
-                }
-              },
-              "required": [],
-              "title": "Category Card"
             }
           },
           "required": [],
           "title": "Layout"
         }
       },
-      "required": [],
-      "title": "deco-sites/shoppingbarra/sections/Category/CategoryList.tsx@Props"
+      "required": [
+        "selectLabel"
+      ],
+      "title": "deco-sites/shoppingbarra/components/ui/CategoryList.tsx@Props"
     },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvQmVuZWZpdHMudHN4@Props": {
       "type": "object",
@@ -8311,6 +8343,11 @@
                     "type": "string",
                     "const": "Youtube",
                     "default": "Youtube"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Search",
+                    "default": "Search"
                   }
                 ],
                 "type": "string",
@@ -10564,6 +10601,11 @@
               "type": "string",
               "const": "Youtube",
               "default": "Youtube"
+            },
+            {
+              "type": "string",
+              "const": "Search",
+              "default": "Search"
             }
           ],
           "type": "string",
@@ -13811,6 +13853,27 @@
         }
       }
     },
+    "Li9pc2xhbmRzL1NlbGVjdFN0b3JlLnRzeA==": {
+      "title": "./islands/SelectStore.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvU2VsZWN0U3RvcmUudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/SelectStore.tsx"
+          ],
+          "default": "./islands/SelectStore.tsx"
+        }
+      }
+    },
     "Li9pc2xhbmRzL1NoaXBwaW5nU2ltdWxhdGlvbi50c3g=": {
       "title": "./islands/ShippingSimulation.tsx",
       "type": "object",
@@ -14178,7 +14241,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NhdGVnb3J5L0NhdGVnb3J5TGlzdC50c3g=@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL2NvbXBvbmVudHMvdWkvQ2F0ZWdvcnlMaXN0LnRzeA==@Props"
         }
       ],
       "required": [
@@ -15931,6 +15994,9 @@
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL1NlYXJjaENvbnRyb2xzLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL1NlbGVjdFN0b3JlLnRzeA=="
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL1NoaXBwaW5nU2ltdWxhdGlvbi50c3g="
