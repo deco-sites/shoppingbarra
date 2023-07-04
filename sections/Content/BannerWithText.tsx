@@ -22,7 +22,7 @@ export interface BannerText {
   */
   background?: SemanticColors;
 
-  hideShowButton?: 'show' | 'hide'
+  hideShowButton?: "show" | "hide";
 }
 
 export interface Props {
@@ -60,9 +60,9 @@ export default function BannerWithText({
   };
 
   const hideButton = {
-    show: 'show',
-    hide: 'hidden'
-  }
+    show: "show",
+    hide: "hidden",
+  };
 
   return (
     <>
@@ -77,7 +77,16 @@ export default function BannerWithText({
           }`}
         >
           {bannerTextContent.map((
-            { src, alt, bannerTitle, text, buttonText, href, background, hideShowButton },
+            {
+              src,
+              alt,
+              bannerTitle,
+              text,
+              buttonText,
+              href,
+              background,
+              hideShowButton,
+            },
           ) => (
             <>
               <div>
@@ -105,7 +114,7 @@ export default function BannerWithText({
                       BTN_COLORS[
                         background ?? "primary"
                       ]
-                    } ${hideButton[hideShowButton ?? 'show']}`}
+                    } ${hideButton[hideShowButton ?? "show"]}`}
                   >
                     {buttonText}
                   </Button>
