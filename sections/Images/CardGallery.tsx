@@ -45,7 +45,6 @@ function CardGallery(props: Props) {
           ? (
             <a
               href={featuredCard.href}
-              target="_blank"
               rel="noopener noreferrer"
               aria-label={`${featuredCard.label} Logo`}
               class="flex flex-col gap-2 md:w-2/3 w-full"
@@ -59,7 +58,6 @@ function CardGallery(props: Props) {
           {cardList?.map((content) => (
             <a
               href={content.href}
-              target="_blank"
               rel="noopener noreferrer"
               aria-label={`${content.label} Logo`}
               class="flex flex-col gap-2 w-full"
