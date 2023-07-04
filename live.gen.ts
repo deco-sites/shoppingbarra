@@ -29,25 +29,26 @@ import * as $$$$$$$$7 from "./sections/Images/CardGallery.tsx";
 import * as $$$$$$$$8 from "./sections/Images/ImageGallery.tsx";
 import * as $$$$$$$$9 from "./sections/Images/FeaturedBanner.tsx";
 import * as $$$$$$$$10 from "./sections/Images/Carousel.tsx";
-import * as $$$$$$$$11 from "./sections/Content/Testimonials.tsx";
-import * as $$$$$$$$12 from "./sections/Content/Logos.tsx";
-import * as $$$$$$$$13 from "./sections/Content/VisitOurStores.tsx";
-import * as $$$$$$$$14 from "./sections/Content/Faq.tsx";
-import * as $$$$$$$$15 from "./sections/Content/Benefits.tsx";
-import * as $$$$$$$$16 from "./sections/Content/StoreDirectionIframe.tsx";
-import * as $$$$$$$$17 from "./sections/Product/Wishlist.tsx";
-import * as $$$$$$$$18 from "./sections/Product/SearchResult.tsx";
-import * as $$$$$$$$19 from "./sections/Product/ProductShelf.tsx";
-import * as $$$$$$$$20 from "./sections/Product/ProductDetails.tsx";
-import * as $$$$$$$$21 from "./sections/Miscellaneous/CampaignTimer.tsx";
-import * as $$$$$$$$22 from "./sections/Miscellaneous/CookieConsent.tsx";
-import * as $$$$$$$$23 from "./sections/Social/WhatsApp.tsx";
-import * as $$$$$$$$24 from "./sections/Social/InstagramPosts.tsx";
-import * as $$$$$$$$25 from "./sections/Links/LinkTree.tsx";
-import * as $$$$$$$$26 from "./sections/Links/Shortcuts.tsx";
-import * as $$$$$$$$27 from "./sections/Newsletter/Newsletter.tsx";
-import * as $$$$$$$$28 from "./sections/Header/CategoryHeader.tsx";
-import * as $$$$$$$$29 from "./sections/Header/Header.tsx";
+import * as $$$$$$$$11 from "./sections/Content/BannerWithText.tsx";
+import * as $$$$$$$$12 from "./sections/Content/Testimonials.tsx";
+import * as $$$$$$$$13 from "./sections/Content/Logos.tsx";
+import * as $$$$$$$$14 from "./sections/Content/VisitOurStores.tsx";
+import * as $$$$$$$$15 from "./sections/Content/Faq.tsx";
+import * as $$$$$$$$16 from "./sections/Content/Benefits.tsx";
+import * as $$$$$$$$17 from "./sections/Content/StoreDirectionIframe.tsx";
+import * as $$$$$$$$18 from "./sections/Product/Wishlist.tsx";
+import * as $$$$$$$$19 from "./sections/Product/SearchResult.tsx";
+import * as $$$$$$$$20 from "./sections/Product/ProductShelf.tsx";
+import * as $$$$$$$$21 from "./sections/Product/ProductDetails.tsx";
+import * as $$$$$$$$22 from "./sections/Miscellaneous/CampaignTimer.tsx";
+import * as $$$$$$$$23 from "./sections/Miscellaneous/CookieConsent.tsx";
+import * as $$$$$$$$24 from "./sections/Social/WhatsApp.tsx";
+import * as $$$$$$$$25 from "./sections/Social/InstagramPosts.tsx";
+import * as $$$$$$$$26 from "./sections/Links/LinkTree.tsx";
+import * as $$$$$$$$27 from "./sections/Links/Shortcuts.tsx";
+import * as $$$$$$$$28 from "./sections/Newsletter/Newsletter.tsx";
+import * as $$$$$$$$29 from "./sections/Header/CategoryHeader.tsx";
+import * as $$$$$$$$30 from "./sections/Header/Header.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_invoke from "$live/routes/live/invoke/index.ts";
@@ -211,38 +212,39 @@ const manifest = {
     "$live/sections/UseSlot.tsx": i2$$$$$4,
     "deco-sites/shoppingbarra/sections/Category/CategoryBanner.tsx": $$$$$$$$3,
     "deco-sites/shoppingbarra/sections/Category/CategoryList.tsx": $$$$$$$$4,
-    "deco-sites/shoppingbarra/sections/Content/Benefits.tsx": $$$$$$$$15,
-    "deco-sites/shoppingbarra/sections/Content/Faq.tsx": $$$$$$$$14,
-    "deco-sites/shoppingbarra/sections/Content/Logos.tsx": $$$$$$$$12,
+    "deco-sites/shoppingbarra/sections/Content/BannerWithText.tsx": $$$$$$$$11,
+    "deco-sites/shoppingbarra/sections/Content/Benefits.tsx": $$$$$$$$16,
+    "deco-sites/shoppingbarra/sections/Content/Faq.tsx": $$$$$$$$15,
+    "deco-sites/shoppingbarra/sections/Content/Logos.tsx": $$$$$$$$13,
     "deco-sites/shoppingbarra/sections/Content/StoreDirectionIframe.tsx":
-      $$$$$$$$16,
-    "deco-sites/shoppingbarra/sections/Content/Testimonials.tsx": $$$$$$$$11,
-    "deco-sites/shoppingbarra/sections/Content/VisitOurStores.tsx": $$$$$$$$13,
+      $$$$$$$$17,
+    "deco-sites/shoppingbarra/sections/Content/Testimonials.tsx": $$$$$$$$12,
+    "deco-sites/shoppingbarra/sections/Content/VisitOurStores.tsx": $$$$$$$$14,
     "deco-sites/shoppingbarra/sections/DesignSystem/DesignSystem.tsx":
       $$$$$$$$2,
     "deco-sites/shoppingbarra/sections/Footer/Footer.tsx": $$$$$$$$0,
     "deco-sites/shoppingbarra/sections/Footer/SecondaryFooter.tsx": $$$$$$$$1,
-    "deco-sites/shoppingbarra/sections/Header/CategoryHeader.tsx": $$$$$$$$28,
-    "deco-sites/shoppingbarra/sections/Header/Header.tsx": $$$$$$$$29,
+    "deco-sites/shoppingbarra/sections/Header/CategoryHeader.tsx": $$$$$$$$29,
+    "deco-sites/shoppingbarra/sections/Header/Header.tsx": $$$$$$$$30,
     "deco-sites/shoppingbarra/sections/Images/BannerGrid.tsx": $$$$$$$$6,
     "deco-sites/shoppingbarra/sections/Images/CardGallery.tsx": $$$$$$$$7,
     "deco-sites/shoppingbarra/sections/Images/Carousel.tsx": $$$$$$$$10,
     "deco-sites/shoppingbarra/sections/Images/FeaturedBanner.tsx": $$$$$$$$9,
     "deco-sites/shoppingbarra/sections/Images/ImageGallery.tsx": $$$$$$$$8,
     "deco-sites/shoppingbarra/sections/Images/ShoppableBanner.tsx": $$$$$$$$5,
-    "deco-sites/shoppingbarra/sections/Links/LinkTree.tsx": $$$$$$$$25,
-    "deco-sites/shoppingbarra/sections/Links/Shortcuts.tsx": $$$$$$$$26,
+    "deco-sites/shoppingbarra/sections/Links/LinkTree.tsx": $$$$$$$$26,
+    "deco-sites/shoppingbarra/sections/Links/Shortcuts.tsx": $$$$$$$$27,
     "deco-sites/shoppingbarra/sections/Miscellaneous/CampaignTimer.tsx":
-      $$$$$$$$21,
-    "deco-sites/shoppingbarra/sections/Miscellaneous/CookieConsent.tsx":
       $$$$$$$$22,
-    "deco-sites/shoppingbarra/sections/Newsletter/Newsletter.tsx": $$$$$$$$27,
-    "deco-sites/shoppingbarra/sections/Product/ProductDetails.tsx": $$$$$$$$20,
-    "deco-sites/shoppingbarra/sections/Product/ProductShelf.tsx": $$$$$$$$19,
-    "deco-sites/shoppingbarra/sections/Product/SearchResult.tsx": $$$$$$$$18,
-    "deco-sites/shoppingbarra/sections/Product/Wishlist.tsx": $$$$$$$$17,
-    "deco-sites/shoppingbarra/sections/Social/InstagramPosts.tsx": $$$$$$$$24,
-    "deco-sites/shoppingbarra/sections/Social/WhatsApp.tsx": $$$$$$$$23,
+    "deco-sites/shoppingbarra/sections/Miscellaneous/CookieConsent.tsx":
+      $$$$$$$$23,
+    "deco-sites/shoppingbarra/sections/Newsletter/Newsletter.tsx": $$$$$$$$28,
+    "deco-sites/shoppingbarra/sections/Product/ProductDetails.tsx": $$$$$$$$21,
+    "deco-sites/shoppingbarra/sections/Product/ProductShelf.tsx": $$$$$$$$20,
+    "deco-sites/shoppingbarra/sections/Product/SearchResult.tsx": $$$$$$$$19,
+    "deco-sites/shoppingbarra/sections/Product/Wishlist.tsx": $$$$$$$$18,
+    "deco-sites/shoppingbarra/sections/Social/InstagramPosts.tsx": $$$$$$$$25,
+    "deco-sites/shoppingbarra/sections/Social/WhatsApp.tsx": $$$$$$$$24,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$$5,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$$6,
     "deco-sites/std/sections/configNuvemShop.tsx": i2$$$$$7,

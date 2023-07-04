@@ -9,7 +9,7 @@ export interface Props {
 
 export default function Logo({ logo, alt, href }: Props) {
   return (
-    <a href={href} target="_blank">
+    <a href={href}>
       <Image
         src={logo}
         alt={alt}
