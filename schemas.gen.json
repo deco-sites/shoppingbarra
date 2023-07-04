@@ -8069,36 +8069,104 @@
       "required": [],
       "title": "deco-sites/shoppingbarra/sections/Category/CategoryList.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvQmFubmVyV2l0aFRleHQudHN4@Banner": {
-      "type": "object",
-      "properties": {
-        "src": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Src"
-        },
-        "alt": {
-          "type": "string",
-          "description": "Image alt text",
-          "title": "Alt"
-        }
-      },
-      "required": [
-        "src",
-        "alt"
-      ],
-      "title": "Banner"
-    },
-    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvQmFubmVyV2l0aFRleHQudHN4@Banner[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvQmFubmVyV2l0aFRleHQudHN4@Banner"
-      },
-      "title": "Banner[]"
-    },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML": {
       "type": "string",
       "format": "html",
       "title": "HTML"
+    },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvQmFubmVyV2l0aFRleHQudHN4@BannerText": {
+      "type": "object",
+      "properties": {
+        "src": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Banner image",
+          "title": "Src"
+        },
+        "alt": {
+          "type": "string",
+          "description": "Image's alt text",
+          "title": "Alt"
+        },
+        "bannerTitle": {
+          "type": "string",
+          "description": "title on the top of the text content",
+          "title": "Banner Title"
+        },
+        "text": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "description": "Text Content",
+          "title": "Text"
+        },
+        "buttonText": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Button Text",
+          "title": "Button Text"
+        },
+        "href": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Button href",
+          "title": "Href"
+        },
+        "background": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "primary",
+              "default": "primary"
+            },
+            {
+              "type": "string",
+              "const": "base",
+              "default": "base"
+            },
+            {
+              "type": "string",
+              "const": "accent",
+              "default": "accent"
+            }
+          ],
+          "type": "string",
+          "description": "Button Background Color",
+          "default": "primary",
+          "title": "Background"
+        },
+        "hideShowButton": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "show",
+              "default": "show"
+            },
+            {
+              "type": "string",
+              "const": "hide",
+              "default": "hide"
+            }
+          ],
+          "type": "string",
+          "title": "Hide Show Button"
+        }
+      },
+      "required": [
+        "src",
+        "alt",
+        "bannerTitle",
+        "text"
+      ],
+      "title": "BannerText"
+    },
+    "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvQmFubmVyV2l0aFRleHQudHN4@BannerText[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvQmFubmVyV2l0aFRleHQudHN4@BannerText"
+      },
+      "title": "BannerText[]"
     },
     "ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvQmFubmVyV2l0aFRleHQudHN4@Props": {
       "type": "object",
@@ -8108,78 +8176,13 @@
             "string",
             "null"
           ],
-          "description": "Page Title",
-          "default": "Title",
           "title": "Title"
         },
-        "banners": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvQmFubmVyV2l0aFRleHQudHN4@Banner[]",
-          "title": "Banners"
+        "bannerTextContent": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zaG9wcGluZ2JhcnJhL3NlY3Rpb25zL0NvbnRlbnQvQmFubmVyV2l0aFRleHQudHN4@BannerText[]",
+          "title": "Banner Text Content"
         },
-        "bannerTitle": {
-          "type": "string",
-          "description": "Banner Title",
-          "default": "BannerTitle",
-          "title": "Banner Title"
-        },
-        "text": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
-          "description": "Banner Text Content",
-          "default": "Text",
-          "title": "Text"
-        },
-        "buttonText": {
-          "type": "string",
-          "description": "Button Text",
-          "default": "Button",
-          "title": "Button Text"
-        },
-        "href": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "Button href",
-          "default": "/",
-          "title": "Href"
-        },
-        "alignment": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "center",
-              "default": "center"
-            },
-            {
-              "type": "string",
-              "const": "left",
-              "default": "left"
-            }
-          ],
-          "type": "string",
-          "description": "Page Title Alignment",
-          "default": "center",
-          "title": "Alignment"
-        },
-        "fontSize": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "Normal",
-              "default": "Normal"
-            },
-            {
-              "type": "string",
-              "const": "Large",
-              "default": "Large"
-            }
-          ],
-          "type": "string",
-          "description": "Page Title Font Size",
-          "default": "Large",
-          "title": "Font Size"
-        },
-        "buttonColor": {
+        "textColor": {
           "anyOf": [
             {
               "type": "string",
@@ -8188,25 +8191,40 @@
             },
             {
               "type": "string",
-              "const": "secondary",
-              "default": "secondary"
+              "const": "base",
+              "default": "base"
             },
             {
               "type": "string",
-              "const": "base",
-              "default": "base"
+              "const": "accent",
+              "default": "accent"
             }
           ],
           "type": "string",
-          "description": "Button Background Color",
-          "default": "primary",
-          "title": "Button Color"
+          "description": "Section Title",
+          "title": "Text Color"
+        },
+        "contentPosition": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "bannerRowPositioning",
+              "default": "bannerRowPositioning"
+            },
+            {
+              "type": "string",
+              "const": "bannerRowReversePositioning",
+              "default": "bannerRowReversePositioning"
+            }
+          ],
+          "type": "string",
+          "description": "Position of the banner and text",
+          "default": "bannerRowPositioning",
+          "title": "Content Position"
         }
       },
       "required": [
-        "bannerTitle",
-        "text",
-        "buttonText"
+        "bannerTextContent"
       ],
       "title": "deco-sites/shoppingbarra/sections/Content/BannerWithText.tsx@Props"
     },
