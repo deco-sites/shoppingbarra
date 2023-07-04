@@ -60,7 +60,7 @@ function FeaturedBanner(props: Props) {
       />
       <a
         class="relative inline-block mx-auto pt-5"
-        href="/"
+        href={banner.href}
       >
         <Picture class="col-start-1 col-span-1 row-start-1 row-span-1 p-2.5 mx-auto">
           <Source
