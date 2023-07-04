@@ -45,17 +45,20 @@ export default function FooterItems(
           </ul>
 
           {/* Mobile view */}
-          <div class="container lg:hidden  mt-9 mb-6 ml-0">
+          <div class="container lg:hidden mt-9">
             <ul class="mb-3">
               {sections.map((section) => (
                 <li class="mb-6">
                   <span class="font-extrabold text-xl">
                     {section.label}
                   </span>
-                  <ul class={`gap-0.5 text-sm font-extralight`}>
+                  <ul class={`gap-0.5 text-base font-extralight mt-4`}>
                     {section.items?.map((item) => (
                       <li>
-                        <a href={item.href} class="block py-1 link link-hover">
+                        <a
+                          href={item.href}
+                          class="block py-1 link link-hover min-h-[48px]"
+                        >
                           {item.label}
                         </a>
                       </li>

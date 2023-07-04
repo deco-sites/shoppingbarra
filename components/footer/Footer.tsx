@@ -28,8 +28,6 @@ export interface SocialItem {
 }
 
 export interface Layout {
-  backgroundColor?: "Primary";
-  variation?: "Variation 1";
   hide?: {
     logo?: boolean;
     newsletter?: boolean;
@@ -46,7 +44,7 @@ export interface Layout {
 export interface Props {
   logo?: {
     image: LiveImage;
-    description?: string;
+    description: string;
   };
   sections?: Section[];
   social?: {
@@ -66,8 +64,6 @@ function Footer({
   social = { title: "", items: [] },
   backToTheTop,
   layout = {
-    backgroundColor: "Primary",
-    variation: "Variation 1",
     hide: {
       logo: false,
       sectionLinks: false,
